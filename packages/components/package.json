@@ -8,7 +8,8 @@
     "files": [
         "lib",
         "es",
-        "README.md"
+        "README.md",
+        "index.ts"
     ],
     "repository": {
         "type": "git",
