@@ -18,11 +18,11 @@
         "dumi"
     ],
     "authors": [],
-    "license": "MIT",
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
         "classnames": "^2.2.6"
-    }
+    },
+    "gitHead": "6847c9dff9e939362b93e1f747a11397697ec7c2"
 }
