@@ -1,0 +1,7 @@
+38 error Error: Command failed: git tag @next-dev/components@0.0.3 -m @next-dev/components@0.0.3
+38 error fatal: tag '@next-dev/components@0.0.3' already exists
+38 error
+38 error     at makeError (/Users/sila/Documents/Project/next-dev-team/next-libray/node_modules/execa/index.js:174:9)
+38 error     at /Users/sila/Documents/Project/next-dev-team/next-libray/node_modules/execa/index.js:278:16
+38 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+38 error     at async Promise.all (index 0)
