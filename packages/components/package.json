@@ -2,9 +2,9 @@
     "name": "components-next",
     "version": "0.0.4",
     "description": "",
-    "main": "lib/index.js",
-    "module": "es/index.js",
-    "types": "es/index.d.ts",
+    "main": "./lib/index.js",
+    "module": "./es/index.js",
+    "types": "./es/index.d.ts",
     "files": [
         "lib",
         "es",
