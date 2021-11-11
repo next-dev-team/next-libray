@@ -12,7 +12,7 @@ Demo:
 
 ```tsx
 import React from 'react';
-import { Foo } from 'ui-demo';
+import { Foo } from '@next-dev/components';
 
 export default () => <Foo title="First Demo" />;
 ```
