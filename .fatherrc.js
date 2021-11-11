@@ -4,6 +4,6 @@ export default {
   // 用于替换 __VERSION__ pkg.version
   extraBabelPlugins: ['version'],
   pkgs: [
-    '@next-dev/components',
+    'components-next',
   ],
 }
