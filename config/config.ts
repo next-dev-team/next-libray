@@ -2,6 +2,7 @@ export default {
   title: 'Antd Mobile',
   mode: 'site',
   exportStatic: {},
+  ssr:{},
   hash: true,
   locales: [['zh-CN', '中文'], ['en-US', '英文']],
   favicon:

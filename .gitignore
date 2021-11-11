@@ -12,3 +12,5 @@
 /.changelog
 yarn.lock
 .umi
+dist
+/dist
