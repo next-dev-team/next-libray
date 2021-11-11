@@ -1,6 +1,6 @@
 {
     "name": "@next-dev/components",
-    "version": "0.0.2",
+    "version": "0.0.1",
     "description": "",
     "main": "lib/index.js",
     "module": "es/index.js",
@@ -23,7 +23,6 @@
         "access": "public"
     },
     "dependencies": {
-        "antd-mobile": "2.3.3",
         "classnames": "^2.2.6"
     }
 }
