@@ -6,4 +6,9 @@ export default {
   pkgs: [
     'components-next',
   ],
+  extractCSS: true,
+  extraPostCSSPlugins: [
+    require('@tailwindcss/postcss7-compat'),
+    require('postcss-preset-env')({ stage: 1 }),
+  ],
 }
