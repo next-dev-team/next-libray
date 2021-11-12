@@ -1,0 +1,1 @@
+export { Foo, Pricing2 } from './lib'
