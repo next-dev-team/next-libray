@@ -1,8 +1,19 @@
+
 export default {
   title: 'Antd Mobile',
   mode: 'site',
   exportStatic: {},
-  ssr: process.env.NODE_ENV === "production",
+
+  // 用于替换 __VERSION__ pkg.version
+  extraBabelPlugins: ['version',
+    ['babel-plugin-import', { libraryName: 'antd', libraryDirectory: 'es', style: true }, 'antd'],
+    [
+      'babel-plugin-import',
+      { libraryName: 'lodash', libraryDirectory: '', camel2DashComponentName: false },
+      'lodash',
+    ],
+  ],
+  ssr: process.env.NODE_ENV === "production" && {},
   hash: true,
   locales: [['zh-CN', '中文'], ['en-US', '英文']],
   favicon:
@@ -16,8 +27,7 @@ export default {
   // targets: {
   //   ios: 8,
   // },
-  // 用于替换 __VERSION__ pkg.version
-  extraBabelPlugins: ['version'],
+
   tailwindcss: {
     tailwindCssFilePath: '../packages/components/src/tailwind.css',
     tailwindConfigFilePath: 'tailwind.config.js', // 默认取值 tailwindConfigFilePath || join(process.env.APP_ROOT || api.cwd, 'tailwind.config.js'),,

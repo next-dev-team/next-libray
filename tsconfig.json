@@ -12,6 +12,11 @@
     "suppressImplicitAnyIndexErrors": true,
     "declaration": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["../packages/*"],
+      "components-next": ["../packages/components"]
+    },
   }
 }

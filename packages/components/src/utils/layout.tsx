@@ -4,13 +4,15 @@ import { Button, Card, Col, ColProps, Empty, Input, message, Modal, Row, Space }
 import { RowProps } from 'antd/lib/grid/row';
 import Text from 'antd/lib/typography/Text';
 import Title from 'antd/lib/typography/Title';
+import reactElementToJSXString from 'react-element-to-jsx-string';
 // @ts-ignore
 import jsxToString from 'jsx-to-string';
+import React from 'react';
 import { ReactNode, useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { _capitalize, _isEmpty, _lowerCase } from './lodash';
-
+import ReactDOMServer from 'react-dom/server';
 export type IDemoLayout = {
   data: {
     title: string;
@@ -61,6 +63,8 @@ export const DemoLayout = (props: IDemoLayout) => {
         {_isEmpty(itemData) && <Empty />}
 
         {itemData?.map?.((i, k) => {
+          console.log("i",reactElementToJSXString(i.component as any,{}));
+          
           const code =
             view !== 'fullCode'
               ? jsxToString(i.component)
@@ -85,7 +89,7 @@ export const DemoLayout = (props: IDemoLayout) => {
           );
 
           return (
-            <>
+            <React.Fragment key={k}>
               <Modal
                 destroyOnClose
                 onCancel={() => setTitle('')}
@@ -138,7 +142,7 @@ export const DemoLayout = (props: IDemoLayout) => {
                 )}
               </Modal>
 
-              <Col key={k} {...colProps}>
+              <Col  {...colProps}>
                 <div className="flex items-center mb-5">
                   <Title className="mr-3 text-lg mb-0">{i.title}</Title>
                   <FullscreenOutlined
@@ -149,7 +153,7 @@ export const DemoLayout = (props: IDemoLayout) => {
                 </div>
                 {i?.component}
               </Col>
-            </>
+            </React.Fragment>
           );
         })}
       </Row>
