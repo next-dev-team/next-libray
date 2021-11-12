@@ -1,6 +1,6 @@
 {
     "name": "components-next",
-    "version": "0.0.9",
+    "version": "0.0.8",
     "description": "",
     "main": "lib/idex.js",
     "module": "es/index.js",
@@ -25,6 +25,5 @@
     },
     "dependencies": {
         "classnames": "^2.2.6"
-    },
-    "gitHead": "6847c9dff9e939362b93e1f747a11397697ec7c2"
+    }
 }
