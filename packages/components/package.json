@@ -2,8 +2,7 @@
     "name": "components-next",
     "version": "0.0.12",
     "description": "",
-    "main": "lib/idex.js",
-    "module": "es/index.js",
+    "main": "lib",
     "types": "lib/index.d.ts",
     "files": [
         "lib",

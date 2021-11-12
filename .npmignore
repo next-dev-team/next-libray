@@ -3,8 +3,8 @@
 /packages/*/.local
 /packages/**/*.index.md
 /packages/**/*.demo.tsx
-/packages/**/*utils/.ts
-/packages/**/*utils/.tsx
+/packages/**/*utils/*.ts
+/packages/**/*utils/*.tsx
 /packages/**/*.test.ts
 /packages/**/*.test.js
 /node_modules
