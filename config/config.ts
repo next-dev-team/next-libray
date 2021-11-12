@@ -2,7 +2,7 @@ export default {
   title: 'Antd Mobile',
   mode: 'site',
   exportStatic: {},
-  ssr:{},
+  ssr: process.env.NODE_ENV === "production",
   hash: true,
   locales: [['zh-CN', '中文'], ['en-US', '英文']],
   favicon:
