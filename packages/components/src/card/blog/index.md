@@ -1,7 +1,7 @@
 ---
-title: pricing
+title: blog
 group:
-  title: Sections
+  title: Cards
 nav:
   title: Components
   path: /components

@@ -1,7 +1,7 @@
 ---
-title: pricing
+title: ecommerce
 group:
-  title: Sections
+  title: Cards
 nav:
   title: Components
   path: /components

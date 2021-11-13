@@ -49,22 +49,20 @@ export const DemoLayout = (props: IDemoLayout) => {
   );
 
   return (
-    <Card
-      title={
-        <Input
-          onChange={(v) => onSearch(v.target?.value)}
-          className="max-w-xs"
-          placeholder="Search..."
-          allowClear
-        />
-      }
-    >
+    <>
+      <Input
+        onChange={(v) => onSearch(v.target?.value)}
+        className="max-w-xs mb-6"
+        placeholder="Search..."
+        allowClear
+      />
+
       <Row gutter={gutter} justify={_isEmpty(itemData) ? 'center' : 'start'}>
         {_isEmpty(itemData) && <Empty />}
 
         {itemData?.map?.((i, k) => {
-          console.log("i",reactElementToJSXString(i.component as any,{}));
-          
+          console.log("i", reactElementToJSXString(i.component as any, {}));
+
           const code =
             view !== 'fullCode'
               ? jsxToString(i.component)
@@ -143,20 +141,29 @@ export const DemoLayout = (props: IDemoLayout) => {
               </Modal>
 
               <Col  {...colProps}>
-                <div className="flex items-center mb-5">
-                  <Title className="mr-3 text-lg mb-0">{i.title}</Title>
-                  <FullscreenOutlined
-                    style={{ fontSize: 20, marginRight: 12, color: '#1890ff' }}
-                    onClick={() => setTitle(i.title)}
-                  />
-                  {copyCode}
-                </div>
-                {i?.component}
+                <Card bordered title={
+                  <Title className="mr-3 text-lg mb-0 ">{i.title}</Title>
+                }
+                  extra={
+                    <Space align="center">
+                      <FullscreenOutlined
+                        style={{ fontSize: 20, marginRight: 12, color: '#1890ff' }}
+                        onClick={() => setTitle(i.title)}
+                      />
+                      {copyCode}
+
+                    </Space>
+                  }
+                >
+
+                  {i?.component}
+
+                </Card>
               </Col>
             </React.Fragment>
           );
         })}
       </Row>
-    </Card>
+    </>
   );
 };
