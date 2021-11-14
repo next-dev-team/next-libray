@@ -9,7 +9,6 @@
  * --- convert to jsx: ----- https://htmltojsx.in
  */
 
-export * from './price';
 export * from './card';
 
 /**

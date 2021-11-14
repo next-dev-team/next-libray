@@ -11,7 +11,7 @@ const Demo = () => {
     { title: 'blog card3', component: <BlogCard3 /> },
   ];
 
-  return <DemoLayout data={data} />;
+  return <DemoLayout data={data} />
 };
 
 export default Demo;

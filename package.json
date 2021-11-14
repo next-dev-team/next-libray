@@ -48,13 +48,13 @@
         "umi-plugin-tailwindcss": "^3.2.1",
         "umi-test": "^1.9.6",
         "umi-tools": "^0.4.0",
-        "umi-types": "^0.5.14",
-        "webpack": "^5.64.0"
+        "umi-types": "^0.5.14"
     },
     "browserslist": [
         "last 2 versions",
         "Firefox ESR",
         "> 1%",
         "ie >= 11"
-    ]
+    ],
+    "dependencies": {}
 }
