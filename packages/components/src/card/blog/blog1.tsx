@@ -3,7 +3,7 @@ export const BlogCard1 = () => {
     <div className="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
       <div className="flex items-center justify-between">
         <span className="text-sm font-light text-gray-600 dark:text-gray-400">
-          Mar 10, 2019
+          Mar 10, 2021
         </span>
         <a className="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
           Design

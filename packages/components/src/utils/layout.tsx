@@ -61,7 +61,7 @@ export const DemoLayout = (props: IDemoLayout) => {
         {_isEmpty(itemData) && <Empty />}
 
         {itemData?.map?.((i, k) => {
-          console.log("i", reactElementToJSXString(i.component as any, {}));
+          // console.log("i", reactElementToJSXString(i.component as any, {}));
 
           const code =
             view !== 'fullCode'
