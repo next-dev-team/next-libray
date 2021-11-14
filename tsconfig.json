@@ -15,7 +15,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "components-next": ["./packages/components/src/index.ts"]
+      "components-next": ["./packages/components/src/index.ts"],
     }
   },
   "include": [

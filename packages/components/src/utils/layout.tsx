@@ -22,7 +22,7 @@ export type IDemoLayout = {
     /**
      * antd col 1-24
      */
-    span?: 'md' | 'xs' | 'sm' | 'lg' | number;
+    span?: '12'
   }[];
   span?: number;
   children?: ReactNode;
@@ -32,17 +32,13 @@ export type IDemoLayout = {
 };
 
 export const DemoLayout = (props: IDemoLayout) => {
-  const xs = { lg: 6, sm: 9, xs: 24 };
-  const sm = { lg: 7, sm: 10, xs: 24 };
-  const md = { lg: 10, sm: 11, xs: 24 };
-  const lg = { lg: 12, sm: 12, xs: 24 };
+  const cols = { xxl: 8, xl: 12, lg: 12, md: 12, sm: 12, xs: 24 };
 
-  const renderSpan = props.isSmallSpan ? sm : lg;
+  // const renderSpan = props.isSmallSpan ? sm : sm;
 
   const {
     data,
     colProps = {
-      ...renderSpan,
       ...props.colProps,
     },
     gutter = [20, 20],
@@ -136,28 +132,28 @@ export const DemoLayout = (props: IDemoLayout) => {
                   </Row>
                 }
               >
-                {view === 'preview' ? (
-                  i.component
-                ) : (
-                  <>
-                    <SyntaxHighlighter
-                      language="javascript"
-                      style={docco}
-                      customStyle={{ minHeight: 300 }}
-                    >
-                      {code}
-                    </SyntaxHighlighter>
-                  </>
-                )}
+                <Card style={{ display: 'flex', justifyContent: 'center' }}>
+                  {view === 'preview' ? (
+                    i.component
+                  ) : (
+                    <>
+                      <SyntaxHighlighter
+                        language="javascript"
+                        style={docco}
+                        customStyle={{ minHeight: 300 }}
+                      >
+                        {code}
+                      </SyntaxHighlighter>
+                    </>
+                  )}
+                </Card>
               </Modal>
 
               <Col
-                {...colProps}
                 {...{
-                  ...((i.span === 'lg' && lg) ||
-                    (i.span === 'xs' && xs) ||
-                    (i.span === 'sm' && sm) ||
-                    (i.span === 'md' && md) || { span: i.span }),
+                  ...cols,
+                  ...colProps,
+                  ...(i.span === '12' ? { ...cols, xxl: 12, xl: 24 } : {}),
                 }}
               >
                 <Card
@@ -172,6 +168,7 @@ export const DemoLayout = (props: IDemoLayout) => {
                       {copyCode}
                     </Space>
                   }
+                  bodyStyle={{ display: 'flex', justifyContent: 'center' }}
                 >
                   {i?.component}
                 </Card>
