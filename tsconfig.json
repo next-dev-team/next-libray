@@ -15,8 +15,19 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["../packages/*"],
-      "components-next": ["../packages/components"]
-    },
-  }
+      "components-next": ["./packages/components/src/index.ts"]
+    }
+  },
+  "include": [
+    "typings.d.ts",
+    "**/src/**/*",
+    "**/docs/**/*",
+    "scripts/**/*",
+    "**/demos",
+    ".eslintrc.js",
+    "tests",
+    "jest.config.js",
+    "**/fixtures",
+    "./tests/no-duplicated.ts",
+  ]
 }

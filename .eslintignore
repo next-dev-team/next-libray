@@ -1,0 +1,10 @@
+# dependencies
+node_modules
+# production
+dist
+/.vscode
+lib
+es
+.umi
+.github
+scripts

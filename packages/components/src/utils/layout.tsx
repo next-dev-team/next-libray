@@ -1,23 +1,28 @@
 import { CodeOutlined, CopyOutlined, EyeOutlined, FullscreenOutlined } from '@ant-design/icons';
 import { useDebounceFn } from 'ahooks';
-import { Button, Card, Col, ColProps, Empty, Input, message, Modal, Row, Space } from 'antd';
-import { RowProps } from 'antd/lib/grid/row';
+import type { ColProps } from 'antd';
+import { Button, Card, Col, Empty, Input, message, Modal, Row, Space } from 'antd';
+import type { RowProps } from 'antd/lib/grid/row';
 import Text from 'antd/lib/typography/Text';
 import Title from 'antd/lib/typography/Title';
-import reactElementToJSXString from 'react-element-to-jsx-string';
 // @ts-ignore
 import jsxToString from 'jsx-to-string';
 import React from 'react';
-import { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { _capitalize, _isEmpty, _lowerCase } from './lodash';
-import ReactDOMServer from 'react-dom/server';
+
 export type IDemoLayout = {
   data: {
     title: string;
     component: ReactNode;
     isFullView?: boolean;
+    /**
+     * antd col 1-24
+     */
+    span?: 'md' | 'xs' | 'sm' | 'lg' | number;
   }[];
   span?: number;
   children?: ReactNode;
@@ -27,7 +32,13 @@ export type IDemoLayout = {
 };
 
 export const DemoLayout = (props: IDemoLayout) => {
-  const renderSpan = props.isSmallSpan ? { lg: 6, sm: 10, xs: 8 } : { lg: 12, sm: 12, xs: 24 };
+  const xs = { lg: 6, sm: 9, xs: 24 };
+  const sm = { lg: 7, sm: 10, xs: 24 };
+  const md = { lg: 10, sm: 11, xs: 24 };
+  const lg = { lg: 12, sm: 12, xs: 24 };
+
+  const renderSpan = props.isSmallSpan ? sm : lg;
+
   const {
     data,
     colProps = {
@@ -91,8 +102,8 @@ export const DemoLayout = (props: IDemoLayout) => {
               <Modal
                 destroyOnClose
                 onCancel={() => setTitle('')}
-                style={{ minWidth: 800, borderRadius: 4 }}
-                bodyStyle={{ minHeight: 300 }}
+                style={{ minWidth: '70vw', borderRadius: 4 }}
+                bodyStyle={{ minHeight: '60vh' }}
                 visible={i.title === title}
                 footer={false}
                 title={
@@ -140,10 +151,18 @@ export const DemoLayout = (props: IDemoLayout) => {
                 )}
               </Modal>
 
-              <Col  {...colProps}>
-                <Card bordered title={
-                  <Title className="mr-3 text-lg mb-0 ">{i.title}</Title>
-                }
+              <Col
+                {...colProps}
+                {...{
+                  ...((i.span === 'lg' && lg) ||
+                    (i.span === 'xs' && xs) ||
+                    (i.span === 'sm' && sm) ||
+                    (i.span === 'md' && md) || { span: i.span }),
+                }}
+              >
+                <Card
+                  bordered
+                  title={<Title className="mr-3 text-lg mb-0 ">{i.title}</Title>}
                   extra={
                     <Space align="center">
                       <FullscreenOutlined
@@ -151,13 +170,10 @@ export const DemoLayout = (props: IDemoLayout) => {
                         onClick={() => setTitle(i.title)}
                       />
                       {copyCode}
-
                     </Space>
                   }
                 >
-
                   {i?.component}
-
                 </Card>
               </Col>
             </React.Fragment>

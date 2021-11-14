@@ -1,8 +1,6 @@
 import clxs from 'classnames';
-import { overrideTailwindClasses, } from 'tailwind-override';
+import { overrideTailwindClasses } from 'tailwind-override';
 import { _isEmpty, _pickBy } from './lodash';
-
-
 
 export const clx = (...rest: any) => {
   return overrideTailwindClasses(clxs(rest));

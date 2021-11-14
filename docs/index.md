@@ -50,4 +50,3 @@ $ npx dumi dev
 ## Feedback
 
 Please visit [GitHub](https://github.com/umijs/dumi) or join the discuss group
-

@@ -1,6 +1,18 @@
-// https://merakiui.com/
-// - https://componentity.com/
-// - https://tailwindcomponents.com
+/**
+ * UI/Template
+ *  - https://merakiui.com/
+    - https://componentity.com/
+    - https://tailwindcomponents.com
+ */
 
-export { Pricing2 } from './Price/price2';
-export * from './card/index';
+/**
+ * --- convert to jsx: ----- https://htmltojsx.in
+ */
+
+export * from './price';
+export * from './card';
+
+/**
+ * ------- constants --------
+ */
+export * from './constants';

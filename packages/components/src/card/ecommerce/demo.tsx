@@ -8,7 +8,7 @@ const Demo = () => {
     { title: 'ecommerce card3', component: <EcommerceCard3 /> },
   ];
 
-  return <DemoLayout  data={data} />;
+  return <DemoLayout data={data} />;
 };
 
 export default Demo;

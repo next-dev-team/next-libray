@@ -2,12 +2,10 @@ export const EcommerceCard1 = () => {
   return (
     <div className="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
       <div className="px-4 py-2">
-        <h1 className="text-3xl font-bold text-gray-800 uppercase dark:text-white">
-          NIKE AIR
-        </h1>
+        <h1 className="text-3xl font-bold text-gray-800 uppercase dark:text-white">NIKE AIR</h1>
         <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos
-          quidem sequi illum facere recusandae voluptatibus
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum
+          facere recusandae voluptatibus
         </p>
       </div>
       <img

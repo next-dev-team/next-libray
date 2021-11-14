@@ -14,9 +14,8 @@ export const BlogCard2 = () => {
           AP® Psychology - Course 5: Health and Behavior
         </h1>
         <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio
-          eligendi similique exercitationem optio libero vitae accusamus
-          cupiditate laborum eos.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio eligendi similique
+          exercitationem optio libero vitae accusamus cupiditate laborum eos.
         </p>
       </div>
       <div>

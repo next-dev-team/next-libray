@@ -12,5 +12,13 @@
 /.changelog
 yarn.lock
 .umi
+.umi-production
 dist
 /dist
+
+# screenshot
+screenshot
+.firebase
+.eslintcache
+.changelog
+.changelog.md

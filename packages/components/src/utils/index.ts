@@ -1,2 +1,2 @@
 export * from './arrObj';
-export *  from './lodash'
+export * from './lodash';
