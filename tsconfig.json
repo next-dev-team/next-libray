@@ -6,7 +6,7 @@
     "allowJs": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "suppressImplicitAnyIndexErrors": true,
@@ -15,7 +15,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "components-next": ["./packages/components/src/index.ts"],
+      "components-next": ["./packages/components/src"],
     }
   },
   "include": [

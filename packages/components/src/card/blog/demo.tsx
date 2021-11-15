@@ -8,7 +8,7 @@ import {
   BlogCard5,
   BlogCard6,
   BlogCard7,
-} from 'components-next';
+} from 'components-next/src';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
 const Demo = () => {

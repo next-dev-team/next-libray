@@ -1,4 +1,4 @@
-import { IMG } from 'components-next';
+import { IMG } from 'components-next/src';
 
 export const TestimonialsCard1 = () => {
   return (

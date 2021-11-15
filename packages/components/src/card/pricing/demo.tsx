@@ -1,12 +1,17 @@
-import { PricingCard1 } from 'components-next';
+import { PricingCard1, PricingCard2 } from 'components-next/src';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
-import { PricingCard2 } from './pricing2';
 
 export default () => {
   const data: IDemoLayout['data'] = [
     {
       title: 'Pricing Card2',
-      component: <PricingCard2 />,
+      component: (
+        <PricingCard2
+          data={{
+            title: undefined,
+          }}
+        />
+      ),
     },
     {
       title: 'Pricing Card1',

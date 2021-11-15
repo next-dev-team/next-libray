@@ -7,7 +7,7 @@ import {
   ProfileCard6,
   ProfileCard7,
   ProfileCard8,
-} from 'components-next';
+} from 'components-next/src';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
 export default () => {

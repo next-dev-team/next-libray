@@ -1,4 +1,11 @@
-import { TestimonialsCard1, TestimonialsCard2, TestimonialsCard3, TestimonialsCard4, TestimonialsCard5, TestimonialsCard6 } from 'components-next';
+import {
+  TestimonialsCard1,
+  TestimonialsCard2,
+  TestimonialsCard3,
+  TestimonialsCard4,
+  TestimonialsCard5,
+  TestimonialsCard6,
+} from 'components-next/src';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
 export default () => {
@@ -30,7 +37,6 @@ export default () => {
     {
       title: 'Testimonials Card6',
       component: <TestimonialsCard6 />,
-
     },
   ];
 

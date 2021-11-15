@@ -38,7 +38,7 @@ export default defineConfig({
     },
   ],
   alias: {
-    components: path.resolve(__dirname, 'packages', 'components-next', 'src'),
+    components: path.resolve(__dirname, 'packages', 'components', 'src'),
   },
   tailwindcss: {
     tailwindCssFilePath: '../packages/components/src/tailwind.css',

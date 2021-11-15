@@ -14,4 +14,4 @@ export * from './card';
 /**
  * ------- constants --------
  */
-export * from './constants';
+export { IMG } from './constants';

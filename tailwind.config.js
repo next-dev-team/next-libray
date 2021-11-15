@@ -1,7 +1,7 @@
 // const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-  // mode: 'jit',
+  mode: 'jit',
   // jit document: https://tailwindcss.com/docs/just-in-time-mode
   theme: {
     extend: {},

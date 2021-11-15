@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { IMG } from "components-next";
+import { IMG } from "components-next/src";
 
 export type ITestimonialsCard6 = {
   type?: 'primary';
