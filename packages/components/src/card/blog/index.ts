@@ -5,5 +5,4 @@ export * from './blog5';
 export * from './blog4';
 export * from './blog3';
 export * from './blog2';
-export * from './blog1';
-
+export { default as BlogCard1 } from './blog1';
