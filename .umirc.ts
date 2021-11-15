@@ -82,9 +82,7 @@ export default defineConfig({
   // theme: {
   //   '@hd': '0.02rem',
   // },
-  // targets: {
-  //   ios: 8,
-  // },
+
 
   esbuild:{},
 });
