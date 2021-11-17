@@ -1,4 +1,5 @@
-import { EcommerceCard1, EcommerceCard2, EcommerceCard3 } from 'components-next/src';
+//@ts-ignore
+import { EcommerceCard1, EcommerceCard2, EcommerceCard3 } from 'components-next';
 import { DemoLayout } from '../../utils/layout';
 
 const Demo = () => {

@@ -1,4 +1,4 @@
-export const BlogCard2 = () => {
+ const BlogCard2 = () => {
   return (
     <div className="w-full max-w-sm px-4 py-3 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
       <div className="flex items-center justify-between">
@@ -56,3 +56,5 @@ export const BlogCard2 = () => {
     </div>
   );
 };
+
+export default BlogCard2;

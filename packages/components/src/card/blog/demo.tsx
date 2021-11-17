@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   BlogCard1,
   BlogCard2,
@@ -8,10 +6,10 @@ import {
   BlogCard5,
   BlogCard6,
   BlogCard7,
-} from 'components-next/src';
+} from '../';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
-const Demo = () => {
+export default () => {
   const data: IDemoLayout['data'] = [
     { title: 'Bloc Card7', component: <BlogCard7 />, span: '12' },
     { title: 'Bloc Card6', component: <BlogCard6 /> },
@@ -25,4 +23,3 @@ const Demo = () => {
   return <DemoLayout data={data} />;
 };
 
-export default Demo;

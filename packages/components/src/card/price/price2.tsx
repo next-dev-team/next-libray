@@ -8,7 +8,7 @@ const initData: IPricingCard2['data'] = {
   title: 'Pay as you go',
 };
 
-export const PricingCard2 = (props: IPricingCard2) => {
+ const PricingCard2 = (props: IPricingCard2) => {
   const { data = initData } = props;
   const { title } = data || {};
 
@@ -94,3 +94,5 @@ export const PricingCard2 = (props: IPricingCard2) => {
     </div>
   );
 };
+
+export default PricingCard2;

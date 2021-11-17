@@ -1,4 +1,4 @@
-export const ProfileCard1 = () => {
+const ProfileCard1 = () => {
   return (
     <div className="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
       <img
@@ -15,3 +15,5 @@ export const ProfileCard1 = () => {
     </div>
   );
 };
+
+export default ProfileCard1;

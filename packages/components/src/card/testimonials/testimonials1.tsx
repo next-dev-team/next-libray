@@ -1,6 +1,6 @@
-import { IMG } from 'components-next/src';
+import { IMG } from "../../constants/img";
 
-export const TestimonialsCard1 = () => {
+ const TestimonialsCard1 = () => {
   return (
     <div className="py-6 max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 flex flex-col  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 border">
       <div className="sm:flex items-center">
@@ -52,3 +52,5 @@ export const TestimonialsCard1 = () => {
     </div>
   );
 };
+
+export default TestimonialsCard1;

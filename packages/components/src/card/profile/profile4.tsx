@@ -1,6 +1,6 @@
 import { IMG } from 'components-next/src';
 
-export const ProfileCard4 = () => {
+ const ProfileCard4 = () => {
   return (
     <div className="p-5 border rounded text-gray-500">
       <div className="flex items-center">
@@ -165,3 +165,5 @@ export const ProfileCard4 = () => {
     </div>
   );
 };
+
+export default ProfileCard4;

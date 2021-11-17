@@ -1,4 +1,4 @@
-export const ProfileCard7 = () => {
+ const ProfileCard7 = () => {
   return (
     <div className="items-center lg:flex">
       <div className="lg:w-1/2">
@@ -64,3 +64,5 @@ export const ProfileCard7 = () => {
     </div>
   );
 };
+
+export default ProfileCard7;

@@ -1,4 +1,4 @@
-export const BlogCard6 = () => {
+ const BlogCard6 = () => {
   return (
     <div className="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
       <div className="mb-8">
@@ -15,3 +15,5 @@ export const BlogCard6 = () => {
     </div>
   );
 };
+
+export default BlogCard6;

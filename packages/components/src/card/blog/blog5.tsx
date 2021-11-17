@@ -1,5 +1,5 @@
 
-export const BlogCard5 = () => {
+ const BlogCard5 = () => {
   return (
     <div className="rounded overflow-hidden border w-full  bg-white mx-3 md:mx-0 lg:mx-0">
       <div className="w-full flex justify-between p-3">
@@ -42,3 +42,5 @@ export const BlogCard5 = () => {
     </div>
   );
 };
+
+export default BlogCard5

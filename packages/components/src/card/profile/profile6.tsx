@@ -1,4 +1,4 @@
-export const ProfileCard6 = () => {
+ const ProfileCard6 = () => {
   return (
     <div className="w-full bg-white rounded-lg sahdow-lg overflow-hidden flex flex-col md:flex-row">
       <div className="w-full md:w-2/5 h-80">
@@ -53,3 +53,5 @@ export const ProfileCard6 = () => {
     </div>
   );
 };
+
+export default ProfileCard6;

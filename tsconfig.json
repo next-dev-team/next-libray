@@ -2,8 +2,9 @@
   "compilerOptions": {
     "target": "esnext",
     "moduleResolution": "node",
+    "types": ["node"],
     "jsx": "preserve",
-    "allowJs": true,
+    "allowJs": false,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "strict": false,
@@ -15,15 +16,14 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "components-next": ["./packages/components/src"],
+      "components-next": ["./packages/components/src/index.ts"],
     }
   },
   "include": [
-    "typings.d.ts",
+    "**/src/**/*.d.ts",
     "**/src/**/*",
     "**/docs/**/*",
     "scripts/**/*",
-    "**/demos",
     ".eslintrc.js",
     "tests",
     "jest.config.js",

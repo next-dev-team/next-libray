@@ -7,7 +7,7 @@ export type ITestimonialsCard4 = {
   className?: string;
 };
 
-export const TestimonialsCard4 = (props: ITestimonialsCard4) => {
+const TestimonialsCard4 = (props: ITestimonialsCard4) => {
   const { type, clxBg } = props;
 
   return (
@@ -60,3 +60,5 @@ export const TestimonialsCard4 = (props: ITestimonialsCard4) => {
     </li>
   );
 };
+
+export default TestimonialsCard4;

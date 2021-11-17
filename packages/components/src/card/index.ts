@@ -3,7 +3,7 @@
 /**
  * -------- pricing ----------
  */
-export * from './pricing';
+export * from './price';
 /**
  * -------- testimonials ----------
  */

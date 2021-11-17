@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const BlogCard4 = () => {
+const BlogCard4 = () => {
   return (
     <div className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20 border border-gray-50">
       <div className="flex justify-center md:justify-end -mt-12">
@@ -25,3 +23,5 @@ export const BlogCard4 = () => {
     </div>
   );
 };
+
+export default BlogCard4;

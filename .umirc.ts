@@ -2,6 +2,7 @@ import { defineConfig } from 'dumi';
 import path from 'path';
 
 export default defineConfig({
+
   metas: [
     {
       property: 'og:site_name',

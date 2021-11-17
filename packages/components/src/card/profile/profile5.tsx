@@ -1,5 +1,5 @@
 
-export const ProfileCard5 = () => {
+ const ProfileCard5 = () => {
   return (
     <div className="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
       <div className="mb-8">
@@ -16,3 +16,5 @@ export const ProfileCard5 = () => {
     </div>
   );
 };
+
+export default ProfileCard5;

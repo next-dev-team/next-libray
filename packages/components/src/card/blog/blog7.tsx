@@ -1,4 +1,4 @@
-export const BlogCard7 = () => {
+ const BlogCard7 = () => {
   return (
     <div className="bg-white dark:bg-gray-800 lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
       <div className="lg:w-1/2">
@@ -31,3 +31,4 @@ export const BlogCard7 = () => {
     </div>
   );
 };
+export default BlogCard7;

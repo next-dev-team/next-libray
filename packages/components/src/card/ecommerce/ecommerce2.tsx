@@ -1,4 +1,4 @@
-export const EcommerceCard2 = () => {
+ const EcommerceCard2 = () => {
   return (
     <div className="flex max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
       <div
@@ -49,3 +49,5 @@ export const EcommerceCard2 = () => {
     </div>
   );
 };
+
+export default EcommerceCard2;

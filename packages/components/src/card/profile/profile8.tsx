@@ -1,4 +1,4 @@
-export const ProfileCard8 = () => {
+ const ProfileCard8 = () => {
   return (
     <div className="w-full max-w-xs text-center">
       <img
@@ -13,3 +13,5 @@ export const ProfileCard8 = () => {
     </div>
   );
 };
+
+export default ProfileCard8;

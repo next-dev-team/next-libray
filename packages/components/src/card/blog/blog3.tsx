@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const BlogCard3 = () => {
+const BlogCard3 = () => {
   return (
     <div className="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
       <img
@@ -44,3 +42,5 @@ export const BlogCard3 = () => {
     </div>
   );
 };
+
+export default BlogCard3;

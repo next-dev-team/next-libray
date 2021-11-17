@@ -1,5 +1,5 @@
 
-export const PricingCard1 = () => {
+ const PriceCard1 = () => {
   return (
     <div className="w-full px-6 py-4 transition-colors duration-200 transform rounded-lg md:mx-5 md:w-96 bg-gray-50 dark:bg-gray-700">
       <div className="text-center">
@@ -93,3 +93,5 @@ export const PricingCard1 = () => {
     </div>
   );
 };
+
+export default PriceCard1;

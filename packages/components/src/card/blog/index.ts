@@ -1,8 +1,8 @@
 //  =================== blog ===================
-export * from './blog7';
-export * from './blog6';
-export * from './blog5';
-export * from './blog4';
-export * from './blog3';
-export * from './blog2';
+export { default as BlogCard7 } from './blog7';
+export { default as BlogCard6 } from './blog6';
+export { default as BlogCard5 } from './blog5';
+export { default as BlogCard4 } from './blog4';
+export { default as BlogCard3 } from './blog3';
+export { default as BlogCard2 } from './blog2';
 export { default as BlogCard1 } from './blog1';

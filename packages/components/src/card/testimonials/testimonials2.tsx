@@ -7,7 +7,7 @@ export type ITestimonialsCard2 = {
   className?: string;
 };
 
-export const TestimonialsCard2 = (props: ITestimonialsCard2) => {
+ const TestimonialsCard2 = (props: ITestimonialsCard2) => {
   const { type, clxBg } = props;
 
   const isPrimary = type === 'primary';
@@ -59,3 +59,5 @@ export const TestimonialsCard2 = (props: ITestimonialsCard2) => {
     </div>
   );
 };
+
+export default TestimonialsCard2;

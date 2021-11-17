@@ -1,4 +1,4 @@
-export const EcommerceCard3 = () => {
+const EcommerceCard3 = () => {
   return (
     <div className="flex flex-col items-center justify-center max-w-sm mx-auto">
       <div
@@ -22,3 +22,5 @@ export const EcommerceCard3 = () => {
     </div>
   );
 };
+
+export default EcommerceCard3;

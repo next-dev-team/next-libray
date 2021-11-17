@@ -1,4 +1,5 @@
-import { PricingCard1, PricingCard2 } from 'components-next/src';
+//@ts-ignore
+import { PriceCard1, PriceCard2 } from 'components-next';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
 export default () => {
@@ -6,7 +7,7 @@ export default () => {
     {
       title: 'Pricing Card2',
       component: (
-        <PricingCard2
+        <PriceCard2
           data={{
             title: undefined,
           }}
@@ -15,7 +16,7 @@ export default () => {
     },
     {
       title: 'Pricing Card1',
-      component: <PricingCard1 />,
+      component: <PriceCard1 />,
     },
   ];
 

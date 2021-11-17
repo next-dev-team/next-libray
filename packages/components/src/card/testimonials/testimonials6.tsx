@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { IMG } from "components-next/src";
+import { IMG } from 'components-next/src';
 
 export type ITestimonialsCard6 = {
   type?: 'primary';
@@ -8,16 +8,12 @@ export type ITestimonialsCard6 = {
   className?: string;
 };
 
-export const TestimonialsCard6 = (props: ITestimonialsCard6) => {
+const TestimonialsCard6 = (props: ITestimonialsCard6) => {
   const { type, clxBg } = props;
 
   return (
     <div className="sm:flex items-center">
-      <img
-        className="w-40 h-40 sm:mr-10"
-        src={IMG.profile}
-        alt="Avatar of Jonathan Reinink"
-      />
+      <img className="w-40 h-40 sm:mr-10" src={IMG.profile} alt="Avatar of Jonathan Reinink" />
       <div className="text-left">
         <div className="mb-4 text-gray-500">
           <p className="mt-2 text-base leading-6">
@@ -51,3 +47,5 @@ export const TestimonialsCard6 = (props: ITestimonialsCard6) => {
     </div>
   );
 };
+
+export default TestimonialsCard6;
