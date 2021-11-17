@@ -1,5 +1,7 @@
 //  =================== Profile ===================
 
+export { default as ProfileCard10 } from './profile10';
+export { default as ProfileCard9 } from './profile9';
 export { default as ProfileCard8 } from './profile8';
 export { default as ProfileCard7 } from './profile7';
 export { default as ProfileCard6 } from './profile6';

@@ -7,11 +7,15 @@ import {
   ProfileCard6,
   ProfileCard7,
   ProfileCard8,
-} from 'components-next/src';
+  ProfileCard9,
+  ProfileCard10,
+} from 'components-next';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
 export default () => {
   const data: IDemoLayout['data'] = [
+    { title: 'Profile Card10', component: <ProfileCard10 /> },
+    { title: 'Profile Card9', component: <ProfileCard9 /> },
     { title: 'Profile Card8', component: <ProfileCard8 /> },
     { title: 'Profile Card7', component: <ProfileCard7 /> },
     { title: 'Profile Card6', component: <ProfileCard6 /> },

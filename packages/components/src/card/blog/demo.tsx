@@ -1,3 +1,4 @@
+import { BlogCard10, BlogCard8, BlogCard9 } from 'components-next';
 import {
   BlogCard1,
   BlogCard2,
@@ -11,6 +12,9 @@ import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
 export default () => {
   const data: IDemoLayout['data'] = [
+    { title: 'Bloc Card10', component: <BlogCard10 /> },
+    { title: 'Bloc Card9', component: <BlogCard9 /> },
+    { title: 'Bloc Card8', component: <BlogCard8 /> },
     { title: 'Bloc Card7', component: <BlogCard7 />, span: '12' },
     { title: 'Bloc Card6', component: <BlogCard6 /> },
     { title: 'Bloc Card5', component: <BlogCard5 /> },
