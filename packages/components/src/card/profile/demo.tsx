@@ -9,7 +9,7 @@ import {
   ProfileCard8,
   ProfileCard9,
   ProfileCard10,
-} from 'components-next';
+} from '../';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
 export default () => {
