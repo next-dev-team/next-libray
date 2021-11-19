@@ -1,6 +1,6 @@
 import { useToggle } from 'ahooks';
 import { Button, Space } from 'antd';
-import { Modal1, ModalUI1, Modal } from 'components-next';
+import { Modal1, ModalUI1, Modal } from '../';
 import { DemoLayout } from '../../utils/layout';
 
 export default () => {

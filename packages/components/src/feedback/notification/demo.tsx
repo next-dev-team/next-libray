@@ -1,5 +1,5 @@
 import { Button, Space } from 'antd';
-import { notifications } from 'components-next';
+import { notifications } from '../';
 import { DemoLayout } from '../../utils/layout';
 
 const Demo = () => {

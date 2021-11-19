@@ -1,4 +1,4 @@
-import { Input } from 'components-next';
+import { Input } from '../';
 import { DemoLayout } from '../../utils/layout';
 
 export default () => {

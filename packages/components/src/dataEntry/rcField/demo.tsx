@@ -1,4 +1,4 @@
-import { RcField } from 'components-next';
+import { RcField } from '../';
 import { DemoLayout } from '../../utils/layout';
 import Form from 'rc-field-form';
 import { Button } from 'antd';
