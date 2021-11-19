@@ -21,6 +21,10 @@
     "publishConfig": {
         "access": "public"
     },
+    "dependencies": {
+        "rc-dialog": "^8.6.0",
+        "rc-field-form": "^1.22.0"
+    },
     "peerDependencies": {
         "lodash": ">=4"
     }

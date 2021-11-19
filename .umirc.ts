@@ -57,7 +57,6 @@ export default defineConfig({
   mode: 'site',
   exportStatic: {},
   dynamicImport: {},
-  fastRefresh: {},
   // For replacement__VERSION__ pkg.version
   extraBabelPlugins: [
     'version',

@@ -10,6 +10,9 @@
  */
 
 export * from './card';
+export * from './feedback';
+export * from './dataEntry';
+export * from './utils';
 
 /**
  * ------- constants --------

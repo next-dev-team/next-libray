@@ -3,7 +3,11 @@
 module.exports = {
   // jit document: https://tailwindcss.com/docs/just-in-time-mode
   theme: {
-    extend: {},
+    extend: {
+      inset: {
+        '44%': '44%',
+       }
+    },
   },
   purge: [
     './packages/components/src/**/*.html',
