@@ -1,29 +1,29 @@
-import { Button } from 'antd';
-import Form from 'rc-field-form';
+import { useForm } from 'rc-field-form';
+import { RcForm } from '.';
 import { RcField } from '../';
 import { DemoLayout } from '../../utils/layout';
-const { useForm } = Form;
 
 export default () => {
   const [form] = useForm();
+
   const data = [
     {
-      title: 'Input validation',
+      title: 'RcForm',
       component: (
-        <Form
-          className="w-full"
+        <RcForm
           form={form}
           onFinish={(values) => {
             alert(JSON.stringify(values));
           }}
         >
+          <RcField various="input" name="name" rules={[{ required: true }]} />
           <RcField
-            label="Username"
-            name="username"
-            rules={[{ required: true }, { type: 'email' }]}
+            various="select"
+            name="test"
+            rules={[{ required: true }]}
+            options={[{ value: 1 }]}
           />
-          <Button onClick={form.submit}>Submit</Button>
-        </Form>
+        </RcForm>
       ),
     },
   ];

@@ -1,4 +1,4 @@
-import { Modal, IModal } from './';
+import { IModal, Modal } from './';
 
 export const ModalUI1 = () => {
   return (
@@ -46,12 +46,16 @@ const Modal1 = (props: IModal1 = {}) => {
     <Modal
       footer={[
         <button
+          key="cancel"
           onClick={props.onClose}
           className="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-gray-600 rounded-full hover:shadow-lg hover:bg-gray-100"
         >
           Cancel
         </button>,
-        <button className="ml-2 mb-2 md:mb-0 bg-red-500 border border-red-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-red-600">
+        <button
+          key="delete"
+          className="ml-2 mb-2 md:mb-0 bg-red-500 border border-red-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-red-600"
+        >
           Delete
         </button>,
       ]}

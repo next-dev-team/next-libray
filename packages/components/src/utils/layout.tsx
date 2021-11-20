@@ -5,14 +5,12 @@ import { Button, Card, Col, Empty, Input, message, Modal, Row, Space } from 'ant
 import type { RowProps } from 'antd/lib/grid/row';
 import Text from 'antd/lib/typography/Text';
 import Title from 'antd/lib/typography/Title';
-// @ts-ignore
-import jsxToString from 'jsx-to-string';
-import React from 'react';
 import type { ReactNode } from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { _capitalize, _isEmpty, _lowerCase } from './lodash';
+import { RcProvider } from '../dataEntry/rcForm';
+import { _isEmpty, _lowerCase } from './lodash';
 
 export type IDemoLayout = {
   data: {
@@ -22,7 +20,7 @@ export type IDemoLayout = {
     /**
      * antd col 1-24
      */
-    span?: '12'
+    span?: '12';
   }[];
   span?: number;
   children?: ReactNode;
@@ -56,7 +54,7 @@ export const DemoLayout = (props: IDemoLayout) => {
   );
 
   return (
-    <>
+    <RcProvider>
       <Input
         onChange={(v) => onSearch(v.target?.value)}
         className="max-w-xs mb-6"
@@ -70,13 +68,7 @@ export const DemoLayout = (props: IDemoLayout) => {
         {itemData?.map?.((i, k) => {
           // console.log("i", reactElementToJSXString(i.component as any, {}));
 
-          const code =
-            view !== 'fullCode'
-              ? jsxToString(i.component)
-              : `export const ${_capitalize(i.title)} = ({...rest}:I${_capitalize(i.title)}) => {
-          return ${jsxToString(i.component).replace('/>', '{...rest} />')}
-        }
-        `;
+          const code = 'working on it soon';
 
           const copyCode = (
             <Text
@@ -177,6 +169,6 @@ export const DemoLayout = (props: IDemoLayout) => {
           );
         })}
       </Row>
-    </>
+    </RcProvider>
   );
 };

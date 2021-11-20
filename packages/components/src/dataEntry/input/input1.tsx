@@ -10,7 +10,7 @@ export type IInput = {
   className?: string;
   various?: IVarious;
   label?: string;
-  name: string;
+  name?: string;
   errText?: string;
   requiredSign?: boolean;
   inputProps?: React.HTMLProps<HTMLInputElement>;

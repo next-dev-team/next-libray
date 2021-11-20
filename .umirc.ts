@@ -2,7 +2,6 @@ import { defineConfig } from 'dumi';
 import path from 'path';
 
 export default defineConfig({
-
   metas: [
     {
       property: 'og:site_name',
@@ -70,19 +69,48 @@ export default defineConfig({
       },
       'lodash',
     ],
+    [
+      'babel-plugin-import',
+      {
+        libraryName: '@ant-design/icons',
+        camel2DashComponentName: false,
+        customName: (transformedMethodName) => {
+          if (transformedMethodName === 'default') {
+            return '@ant-design/icons/es/components/Icon';
+          }
+          return `@ant-design/icons/es/icons/${transformedMethodName}`;
+        },
+      },
+      '@ant-design/icons',
+    ],
+    // [
+    //   'babel-plugin-import',
+    //   {
+    //     libraryName: 'components-next',
+    //     customName: (name) => {
+    //       const sign = name.lastIndexOf('-');
+    //       const libName = name.substring(0, sign);
+    //       const fullLibName = name.substring(sign + 1, name.length);
+    //       const getLibNum = fullLibName.replace(/\D/g, '');
+    //       const libFolder = fullLibName.substring(0, fullLibName.lastIndexOf(getLibNum));
+    //       const customName = `components-next/lib/${libFolder}/${libName}/${libName + getLibNum}`;
+    //       // console.log('======>customName', customName);
+    //       return customName;
+    //     },
+    //   },
+    //   'components-next',
+    // ],
   ],
   ssr: process.env.NODE_ENV === 'production' && {},
   hash: true,
   // locales: [['en-US']],
   favicon:
     'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
-  logo:
-    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+  logo: 'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
   //The mobile component library needs it, it can be deleted if it is not needed, and the dumi-theme-mobile in the package can be deleted if it is not needed.
   // theme: {
   //   '@hd': '0.02rem',
   // },
 
-
-  esbuild:{},
+  esbuild: {},
 });
