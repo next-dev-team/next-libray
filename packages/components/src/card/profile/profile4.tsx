@@ -1,6 +1,6 @@
-import { IMG } from 'components-next/src';
+import { IMG } from '../../';
 
- const ProfileCard4 = () => {
+const ProfileCard4 = () => {
   return (
     <div className="p-5 border rounded text-gray-500">
       <div className="flex items-center">

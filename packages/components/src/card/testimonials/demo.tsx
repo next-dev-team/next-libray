@@ -5,7 +5,7 @@ import {
   TestimonialsCard4,
   TestimonialsCard5,
   TestimonialsCard6,
-} from 'components-next/src';
+} from '../../';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
 export default () => {

@@ -1,4 +1,4 @@
-import { IMG } from 'components-next/src';
+import { IMG } from '../../';
 
 const ProfileCard3 = () => {
   return (
