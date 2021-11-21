@@ -23,7 +23,9 @@
     },
     "dependencies": {
         "rc-dialog": "^8.6.0",
-        "rc-field-form": "^1.22.0"
+        "rc-field-form": "^1.22.0",
+        "rc-notification": "^4.5.7",
+        "rc-select": "^13.1.1"
     },
     "peerDependencies": {
         "lodash": ">=4"

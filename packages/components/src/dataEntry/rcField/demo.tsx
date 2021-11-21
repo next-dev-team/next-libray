@@ -1,8 +1,6 @@
 import { Button } from 'antd';
-import Form from 'rc-field-form';
-import { RcField } from '../';
+import { RcField, RcForm, useForm } from '../';
 import { DemoLayout } from '../../utils/layout';
-const { useForm } = Form;
 
 export default () => {
   const [form] = useForm();
@@ -10,7 +8,7 @@ export default () => {
     {
       title: 'Input validation',
       component: (
-        <Form
+        <RcForm
           className="w-full"
           form={form}
           onFinish={(values) => {
@@ -22,8 +20,8 @@ export default () => {
             name="username"
             rules={[{ required: true }, { type: 'email' }]}
           />
-          <Button onClick={form.submit}>Submit</Button>
-        </Form>
+          <Button onClick={form.submit}>Submit1</Button>
+        </RcForm>
       ),
     },
   ];

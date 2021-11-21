@@ -1,7 +1,6 @@
 import { CloseCircleFilled, DownOutlined } from '@ant-design/icons';
 import Select, { SelectProps } from 'rc-select';
 import { clx } from '../../utils';
-import './select.css';
 
 type ITheme = 'warning' | 'success' | 'error' | 'default';
 

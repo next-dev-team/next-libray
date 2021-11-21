@@ -1,5 +1,4 @@
 import Dialog, { DialogProps } from 'rc-dialog';
-import 'rc-dialog/assets/index.css';
 
 export type IModal = DialogProps;
 

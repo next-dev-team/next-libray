@@ -1,6 +1,5 @@
 import { CloseCircleOutlined } from '@ant-design/icons';
 import Noti from 'rc-notification';
-import 'rc-notification/assets/index.css';
 import { clx } from '../../utils';
 
 type NotificationPlacement = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';

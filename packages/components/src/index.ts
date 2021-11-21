@@ -10,11 +10,10 @@
  */
 
 export * from './card';
-export * from './feedback';
-export * from './dataEntry';
-export * from './utils';
-
 /**
  * ------- constants --------
  */
 export { IMG } from './constants';
+export * from './dataEntry';
+export * from './feedback';
+export * from './utils';

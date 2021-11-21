@@ -1,4 +1,4 @@
-import 'rc-notification/assets/index.css';
+import { HTMLInputTypeAttribute } from 'react';
 import { clx } from '../../utils';
 
 type IVarious = 'warning' | 'success' | 'error' | 'default';
@@ -15,19 +15,11 @@ export type IInput = {
   requiredSign?: boolean;
   inputProps?: React.HTMLProps<HTMLInputElement>;
   placeholder?: string;
+  type?: HTMLInputTypeAttribute;
 };
 
 const Input = (props: IInput) => {
-  const {
-    various = 'default',
-    name,
-    label,
-    inputProps,
-    requiredSign,
-    className,
-    errText,
-    placeholder,
-  } = props;
+  const { various = 'default', name, inputProps, className, placeholder, type = 'text' } = props;
 
   const renderInput = () => {
     const placements: Partial<Record<IInput['various'], string>> = {
@@ -41,29 +33,19 @@ const Input = (props: IInput) => {
 
   return (
     <div className={clx('flex flex-col w-full mb-4', className)}>
-      {label && (
-        <label
-          htmlFor={name || inputProps?.name}
-          className="text-gray-700 select-none font-medium mb-3 capitalize"
-        >
-          {requiredSign && <sup className="text-red-500 text-sm relative top-0 mr-1">*</sup>}
-          {label}
-        </label>
-      )}
-
-      {/* --------------- input --------------- */}
       <input
-        type="text"
-        id={name}
-        name={name || inputProps?.name}
-        placeholder={placeholder}
-        {...inputProps}
-        className={clx(
-          'px-4 py-2 rounded-lg border focus:outline-none focus:ring-2',
-          renderInput(),
-        )}
+        {...{
+          type,
+          id: name,
+          name,
+          placeholder,
+          ...inputProps,
+          className: clx(
+            'px-4 py-2 rounded-lg border focus:outline-none focus:ring-2',
+            renderInput(),
+          ),
+        }}
       />
-      {errText && <p className="text-red-500 text-sm relative top-2 ">{errText}</p>}
     </div>
   );
 };
