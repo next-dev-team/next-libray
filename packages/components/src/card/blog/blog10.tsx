@@ -9,7 +9,7 @@ const BlogCard10 = () => {
           }}
         />
         <div className="flex flex-col w-full md:flex-row">
-          <div className="text-white flex flex-row justify-around p-4 font-bold leading-none uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+          <div className="text-white flex flex-row justify-around p-4 font-bold leading-none uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center">
             <div className="md:text-3xl">Jan</div>
             <div className="md:text-6xl">13</div>
             <div className="md:text-xl">7 pm</div>

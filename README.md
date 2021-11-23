@@ -1,3 +1,22 @@
+  <!-- "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "tw\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
+    ],
+    // suggection for props name include  Cls="bg-blue-700"
+    [
+      "Cls=[\"'`]([^\"'`]*)"
+    ],
+    [
+      "Clx=[\"'`]([^\"'`]*)"
+    ]
+  ] -->
+
 # 🌟 Dumi Template
 
 A doc template can assist you to develop libraries & write docs.
