@@ -23,8 +23,12 @@ export default () => {
             rules={[{ required: true }]}
             options={[{ value: 1 }]}
           />
-          <button onClick={() => form.resetFields()}>Reset</button>
-          <button onClick={form.submit}>Submit</button>
+          <button onClick={() => form.resetFields()} type="button">
+            Reset
+          </button>
+          <button onClick={form.submit} type="button">
+            Submit
+          </button>
         </RcForm>
       ),
     },
