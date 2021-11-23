@@ -16,7 +16,7 @@ export type IButton = {
 } & Omit<ButtonHTMLAttributes<any>, 'color'>;
 
 const Button = (props: IButton) => {
-  const { variant = 'primary', title = 'button', color = 'primary', ...rest } = props;
+  const { variant = 'primary', title = 'button', color = 'primary', children, ...rest } = props;
 
   /**
    * renderBtnClx base on variant
@@ -24,8 +24,8 @@ const Button = (props: IButton) => {
   const renderVariant = useCreation(() => {
     //------- primaryColor ----------
     const primaryColor = tw({
-      primary: 'bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300',
-      dark: 'bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300',
+      primary: 'bg-blue-700 hover:bg-blue-800  focus:ring-blue-300',
+      dark: 'bg-gray-800 hover:bg-gray-900 focus:ring-gray-300',
       success: 'bg-green-700 hover:bg-green-800 focus:ring-green-300',
     } as Record<IButton['color'], string>);
 
@@ -52,13 +52,14 @@ const Button = (props: IButton) => {
 
   return (
     <button
+      type="button"
       {...rest}
       className={clx(
-        'text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center',
+        'text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 text-center',
         renderVariant,
       )}
     >
-      {title}
+      {children || title}
     </button>
   );
 };

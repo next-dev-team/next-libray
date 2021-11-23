@@ -1,3 +1,4 @@
+import { isArray } from 'lodash';
 import { Field } from 'rc-field-form';
 import { FieldProps } from 'rc-field-form/lib/Field';
 import React, { HTMLInputTypeAttribute, ReactNode } from 'react';
@@ -31,7 +32,7 @@ export type IInput = {
 const RcField = (props: IInput) => {
   const {
     theme = 'default',
-    name,
+    name = '',
     label,
     inputProps,
     various = 'input',
@@ -42,13 +43,14 @@ const RcField = (props: IInput) => {
     selectProps,
     options,
     type = 'text',
+    ...rest
   } = props;
 
   const checkType = various === 'input' ? 'Enter' : 'Select';
-  const placeholder = props.placeholder || `${checkType} ${props.name}`;
+  const placeholder = props.placeholder || `${checkType} ${name}`;
 
   return (
-    <Field name={name} initialValue={''} {...props}>
+    <Field name={name} initialValue={isArray(name) ? {} : ''} {...rest}>
       {(control, meta, form) => {
         // console.log('control', control, meta);
         const isErr = meta?.errors.length > 0;
@@ -91,9 +93,11 @@ const RcField = (props: IInput) => {
             select: (
               <Select1
                 {...{
+                  id: name,
                   placeholder,
                   theme: renderTheme,
                   options,
+
                   ...selectProps,
                 }}
               />

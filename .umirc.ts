@@ -1,7 +1,11 @@
+import { IConfig } from '@umijs/types';
 import { defineConfig } from 'dumi';
-import path from 'path';
+import path, { join } from 'path';
 
 export default defineConfig({
+  alias: {
+    'components-next': join(__dirname, 'packages', 'components-next', 'src', 'index.ts'),
+  },
   metas: [
     {
       property: 'og:site_name',
@@ -113,4 +117,4 @@ export default defineConfig({
   // },
 
   esbuild: {},
-});
+} as IConfig);

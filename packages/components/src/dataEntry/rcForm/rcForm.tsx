@@ -1,4 +1,4 @@
-import { omit } from 'lodash';
+import { Button } from 'components-next';
 import Form, { FormProps } from 'rc-field-form';
 import { ReactNode } from 'react';
 import { clx } from '../../';
@@ -13,25 +13,22 @@ export type IInput = FormProps & {
 };
 
 const RcForm = (props: IInput) => {
-  const { className, children, hasSubmitBtn, form, ...rest } = props;
+  const { className, children, hasSubmitBtn = true, form, ...rest } = props;
 
   return (
-    <Form className={clx('w-full', className)} {...omit(rest, 'hasSubmitBtn')}>
+    <Form className={clx('w-full', className)} form={form} {...rest}>
       {children}
-
       {/* has submit button */}
       {hasSubmitBtn && form && (
-        <div className="flex justify-end gap-2">
-          <button type="button" onClick={() => form.resetFields()}>
-            Clear
-          </button>
-          <button onClick={form.submit} type="button">
-            Submit
-          </button>
+        <div className="flex justify-end gap-2 mt-6">
+          <Button onClick={() => form.resetFields()} variant="outline">
+            Reset
+          </Button>
+          <Button onClick={form.submit}>Submit</Button>
         </div>
       )}
     </Form>
   );
 };
 
-export default Object.assign(RcForm, {});
+export default RcForm;

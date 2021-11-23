@@ -15,5 +15,6 @@ export * from './card';
  */
 export { IMG } from './constants';
 export * from './dataEntry';
+export * from './display';
 export * from './feedback';
 export * from './utils';
