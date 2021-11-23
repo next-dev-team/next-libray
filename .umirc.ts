@@ -42,7 +42,7 @@ export default defineConfig({
   },
   tailwindcss: {
     tailwindCssFilePath: '../packages/components/src/tailwind.css',
-    tailwindConfigFilePath: './tailwind.config.js', // Default value tailwindConfigFilePath || join(process.env.APP_ROOT || api.cwd, 'tailwind.config.js'),,
+    tailwindConfigFilePath: 'tailwind.config.js', // Default value tailwindConfigFilePath || join(process.env.APP_ROOT || api.cwd, 'tailwind.config.js'),,
   },
   targets: {
     chrome: 85,

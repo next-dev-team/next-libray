@@ -21,7 +21,7 @@ export type IDemoLayout = {
     /**
      * antd col 1-24
      */
-    span?: '12';
+    span?: '12' | '24';
   }[];
   span?: number;
   children?: ReactNode;
@@ -147,6 +147,7 @@ export const DemoLayout = (props: IDemoLayout) => {
                   ...cols,
                   ...colProps,
                   ...(i.span === '12' ? { ...cols, xxl: 12, xl: 24 } : {}),
+                  ...(i.span === '24' ? { ...cols, xxl: 24, xl: 24 } : {}),
                 }}
               >
                 <Card
