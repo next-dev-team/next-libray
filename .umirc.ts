@@ -1,5 +1,5 @@
 import { defineConfig } from 'dumi';
-import path from 'path';
+const isProd = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
   metas: [
@@ -38,7 +38,8 @@ export default defineConfig({
     },
   ],
   alias: {
-    components: path.resolve(__dirname, 'packages', 'components', 'src'),
+    "components-next": "packages/components/src/index.ts",
+    "components-layout": "packages/components/src/utils/layout.tsx"
   },
   tailwindcss: {
     tailwindCssFilePath: '../packages/components/src/tailwind.css',
@@ -101,7 +102,7 @@ export default defineConfig({
     //   'components-next',
     // ],
   ],
-  ssr: process.env.NODE_ENV === 'production' && {},
+  ssr: isProd && {},
   hash: true,
   // locales: [['en-US']],
   favicon:

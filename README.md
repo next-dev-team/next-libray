@@ -1,21 +1,44 @@
-  <!-- "tailwindCSS.classAttributes": [
-    "class",
-    "className",
-    "ngClass",
-  ],
-  "tailwindCSS.experimental.classRegex": [
+### For tailwind intellisense please follow this
+
+go to setting find setting.json -> paste it
+
+```json
+
+"tailwindCSS.experimental.classRegex": [
+
     [
       "tw\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
+    ],
+    [
+      "tw1\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
+    ],
+    [
+      "tw2\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
+    ],
+    [
+      "cls\\(([^)]*)\\)",
       "[\"'`]([^\"'`]*).*?[\"'`]"
     ],
     // suggection for props name include  Cls="bg-blue-700"
     [
       "Cls=[\"'`]([^\"'`]*)"
     ],
+    // suggection for const
     [
-      "Clx=[\"'`]([^\"'`]*)"
-    ]
-  ] -->
+      "Cls.=.[\"'`]([^\"'`]*)"
+    ],
+  ],
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "containerClx"
+  ]
+
+```
 
 # 🌟 Dumi Template
 
