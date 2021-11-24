@@ -7,15 +7,15 @@ type ITheme = 'warning' | 'success' | 'error' | 'default';
 export type ISelect = SelectProps & { theme?: ITheme };
 
 const Select1 = (props: ISelect) => {
-  const { className, theme = 'default' } = props;
+  const { className, theme = 'default', placeholder = 'Please Select', ...rest } = props;
 
   return (
     <div className={clx('w-full', theme, className)}>
       <Select
-        placeholder="Please Select"
+        placeholder={placeholder}
         inputIcon={<DownOutlined />}
         clearIcon={<CloseCircleFilled />}
-        {...props}
+        {...rest}
       />
     </div>
   );

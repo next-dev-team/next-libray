@@ -1,7 +1,6 @@
-import { Button } from 'components-next';
 import Form, { FormProps } from 'rc-field-form';
 import { ReactNode } from 'react';
-import { clx } from '../../';
+import { Button, clx } from '../../';
 
 export type IInput = FormProps & {
   /**

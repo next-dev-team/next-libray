@@ -162,7 +162,6 @@ export const DemoLayout = (props: IDemoLayout) => {
                       {copyCode}
                     </Space>
                   }
-                  bodyStyle={{ display: 'flex', justifyContent: 'center' }}
                 >
                   {i?.component}
                 </Card>

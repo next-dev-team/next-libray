@@ -3,7 +3,8 @@ import { Field } from 'rc-field-form';
 import { FieldProps } from 'rc-field-form/lib/Field';
 import React, { HTMLInputTypeAttribute, ReactNode } from 'react';
 import { clx } from '../..';
-import Select1, { ISelect } from '../select/select1';
+import { Select1 } from '../select';
+import { ISelect } from '../select/select1';
 
 type ITheme = 'warning' | 'success' | 'error' | 'default';
 type IVarious = 'input' | 'select';
@@ -50,7 +51,11 @@ const RcField = (props: IInput) => {
   const placeholder = props.placeholder || `${checkType} ${name}`;
 
   return (
-    <Field name={name} initialValue={isArray(name) ? {} : ''} {...rest}>
+    <Field
+      name={name}
+      initialValue={isArray(name) ? {} : various === 'select' ? undefined : ''}
+      {...rest}
+    >
       {(control, meta, form) => {
         // console.log('control', control, meta);
         const isErr = meta?.errors.length > 0;
@@ -94,10 +99,8 @@ const RcField = (props: IInput) => {
               <Select1
                 {...{
                   id: name,
-                  placeholder,
                   theme: renderTheme,
                   options,
-
                   ...selectProps,
                 }}
               />
@@ -106,10 +109,12 @@ const RcField = (props: IInput) => {
           return placements[various];
         };
 
+        console.log('control', control);
+
         const childNode =
-          children && typeof children === 'function'
+          typeof children === 'function'
             ? children(control, meta, form)
-            : React.cloneElement(renderVarious() as React.ReactElement, {
+            : React.cloneElement(children || (renderVarious() as React.ReactElement), {
                 ...control,
               });
 

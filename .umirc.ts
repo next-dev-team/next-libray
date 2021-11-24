@@ -1,10 +1,11 @@
 import { IConfig } from '@umijs/types';
 import { defineConfig } from 'dumi';
-import path, { join } from 'path';
+import { join } from 'path';
 
 export default defineConfig({
+  // links: ['https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css'],
   alias: {
-    'components-next': join(__dirname, 'packages', 'components-next', 'src', 'index.ts'),
+    'components-next': join(__dirname, 'packages', 'components', 'src', 'index.ts'),
   },
   metas: [
     {
@@ -41,9 +42,7 @@ export default defineConfig({
       content: '#1890ff',
     },
   ],
-  alias: {
-    components: path.resolve(__dirname, 'packages', 'components', 'src'),
-  },
+
   tailwindcss: {
     tailwindCssFilePath: '../packages/components/src/tailwind.css',
     tailwindConfigFilePath: 'tailwind.config.js', // Default value tailwindConfigFilePath || join(process.env.APP_ROOT || api.cwd, 'tailwind.config.js'),,

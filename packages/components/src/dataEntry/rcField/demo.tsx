@@ -1,4 +1,3 @@
-import { Button } from 'antd';
 import { RcField, RcForm, useForm } from '../';
 import { DemoLayout } from '../../utils/layout';
 
@@ -20,7 +19,6 @@ export default () => {
             name="username"
             rules={[{ required: true }, { type: 'email' }]}
           />
-          <Button onClick={form.submit}>Submit1</Button>
         </RcForm>
       ),
     },
