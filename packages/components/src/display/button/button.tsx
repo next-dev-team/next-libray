@@ -16,7 +16,14 @@ export type IButton = {
 } & Omit<ButtonHTMLAttributes<any>, 'color'>;
 
 const Button = (props: IButton) => {
-  const { variant = 'primary', title = 'button', color = 'primary', children, ...rest } = props;
+  const {
+    className,
+    variant = 'primary',
+    title = 'button',
+    color = 'primary',
+    children,
+    ...rest
+  } = props;
 
   /**
    * renderBtnClx base on variant
@@ -57,6 +64,7 @@ const Button = (props: IButton) => {
       className={clx(
         'text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 text-center',
         renderVariant,
+        className,
       )}
     >
       {children || title}
