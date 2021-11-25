@@ -14,10 +14,10 @@
     "declaration": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "baseUrl": "."
-    // "paths": {
-    //   "components-next": ["./packages/components/src/index.ts"],
-    // }
+    "baseUrl": "./",
+    "paths": {
+      "components-next": ["packages/components/src/index.ts"]
+    }
   },
   "include": [
     "**/src/**/*.d.ts",

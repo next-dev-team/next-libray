@@ -9,8 +9,8 @@ import type { ReactNode } from 'react';
 import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import '../assets/styles.css';
 import { RcProvider } from '../dataEntry/rcForm';
-import '../styles.css';
 import { _isEmpty, _lowerCase } from './lodash';
 
 export type IDemoLayout = {
