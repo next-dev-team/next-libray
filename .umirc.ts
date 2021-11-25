@@ -1,7 +1,14 @@
 import { defineConfig } from 'dumi';
+import path from 'path';
 const isProd = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
+
+  links: [{ rel: 'manifest', href: '/asset-manifest.json' }],
+  resolve: {
+    includes: ['docs', 'packages/components/src'],
+  },
+
   metas: [
     {
       property: 'og:site_name',
@@ -38,8 +45,9 @@ export default defineConfig({
     },
   ],
   alias: {
-    "components-next": "packages/components/src/index.ts",
+    "components-next": path.resolve(__dirname, 'packages', 'components', 'src', 'index.ts'),
     "components-layout": "packages/components/src/utils/layout.tsx"
+
   },
   tailwindcss: {
     tailwindCssFilePath: '../packages/components/src/tailwind.css',
