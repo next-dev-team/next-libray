@@ -17,4 +17,5 @@ export { IMG } from './constants';
 export * from './dataEntry';
 export * from './display';
 export * from './feedback';
+export * from './layout';
 export * from './utils';

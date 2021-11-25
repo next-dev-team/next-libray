@@ -6,29 +6,36 @@ export default () => {
     {
       title: 'Default',
       component: (
-         <Input various="default" name="default" label="default input" requiredSign errText="This field is required!"/>
+        <Input
+          theme="default"
+          name="default"
+          label="default input"
+          requiredSign
+          errText="This field is required!"
+        />
       ),
     },
     {
       title: 'Success',
-      component: (
-         <Input various="success" name="success" label="success input"/>
-      ),
+      component: <Input theme="success" name="success" label="success input" />,
     },
     {
       title: 'Warning',
-      component: (
-         <Input various="warning" name="warning" label="warning input"/>
-      ),
+      component: <Input theme="warning" name="warning" label="warning input" />,
     },
     {
       title: 'Error',
       component: (
-         <Input various="error" name="error" label="error input" requiredSign errText="This field is required!"/>
+        <Input
+          theme="error"
+          name="error"
+          label="error input"
+          requiredSign
+          errText="This field is required!"
+        />
       ),
     },
   ];
 
   return <DemoLayout data={data} />;
 };
-

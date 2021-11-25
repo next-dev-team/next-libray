@@ -31,7 +31,8 @@
         "rc-menu": "^9.0.14",
         "rc-collapse": "^3.1.2",
         "rc-motion": "^2.4.4",
-        "rc-switch": "^3.2.2"
+        "rc-switch": "^3.2.2",
+        "rc-textarea": "^0.3.5"
     },
     "peerDependencies": {
         "lodash": ">=4"

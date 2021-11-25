@@ -2,27 +2,29 @@ import { isArray } from 'lodash';
 import { Field } from 'rc-field-form';
 import { FieldProps } from 'rc-field-form/lib/Field';
 import React, { HTMLInputTypeAttribute, ReactNode } from 'react';
-import { clx } from '../..';
+import { IInput, Input } from '..';
+import { clx, TextArea } from '../..';
 import { Select1 } from '../select';
 import { ISelect } from '../select/select1';
+import { ITextArea } from '../textArea/textArea';
 
-type ITheme = 'warning' | 'success' | 'error' | 'default';
-type IVarious = 'input' | 'select';
+type IVarious = 'input' | 'select' | 'textArea';
 
-export type IInput = {
+export type IField = {
   /**
    * container clx
    */
   className?: string;
-  theme?: ITheme;
   various?: IVarious;
   label?: string;
+  themeColor?: IInput['theme'];
   name: string;
   type?: HTMLInputTypeAttribute;
   errText?: string;
   requiredSign?: boolean;
   placeholder?: string;
   selectProps?: ISelect;
+  textAreaProps?: ITextArea;
   /**
    * select option
    */
@@ -30,9 +32,8 @@ export type IInput = {
   inputProps?: React.HTMLProps<HTMLInputElement>;
 } & FieldProps;
 
-const RcField = (props: IInput) => {
+const RcField = (props: IField) => {
   const {
-    theme = 'default',
     name = '',
     label,
     inputProps,
@@ -42,13 +43,14 @@ const RcField = (props: IInput) => {
     errText,
     children,
     selectProps,
+    textAreaProps,
     options,
-    type = 'text',
+    placeholder,
+    themeColor = 'default',
     ...rest
   } = props;
 
-  const checkType = various === 'input' ? 'Enter' : 'Select';
-  const placeholder = props.placeholder || `${checkType} ${name}`;
+  // const checkType = various === 'input' ? 'Please Enter' : 'Please Select';
 
   return (
     <Field
@@ -62,39 +64,14 @@ const RcField = (props: IInput) => {
         const isSuccess = !isErr && control?.value;
         //@ts-ignore
         const checkRule = props?.rules?.find?.((i) => i.required);
-        const renderTheme = isErr ? 'error' : isSuccess ? 'success' : theme;
-
-        const renderInput = () => {
-          const placements: Partial<Record<IInput['theme'], string>> = {
-            default: 'border-gray-300  focus:ring-gray-200',
-            success: 'border-green-500 text-green-600 placeholder-green-600 focus:ring-green-200',
-            warning:
-              'border-yellow-500 text-yellow-600 placeholder-yellow-600 focus:ring-yellow-200',
-            error: 'border-red-500 text-red-600 placeholder-red-600 focus:ring-red-200',
-          };
-          return placements?.[renderTheme];
-        };
+        const renderTheme = isErr ? 'error' : isSuccess ? 'success' : themeColor;
 
         /**
          * renderVarious
          */
         const renderVarious = () => {
-          const placements: Partial<Record<IInput['various'], ReactNode>> = {
-            input: (
-              <input
-                {...{
-                  placeholder,
-                  type,
-                  id: name,
-                  name,
-                  ...inputProps,
-                  className: clx(
-                    'px-4 py-2 rounded-lg border focus:outline-none focus:ring-2',
-                    renderInput(),
-                  ),
-                }}
-              />
-            ),
+          const placements: Partial<Record<IField['various'], ReactNode>> = {
+            input: <Input {...{ name, theme: renderTheme }} />,
             select: (
               <Select1
                 {...{
@@ -105,11 +82,10 @@ const RcField = (props: IInput) => {
                 }}
               />
             ),
+            textArea: <TextArea {...{ placeholder, name, ...textAreaProps }} />,
           };
           return placements[various];
         };
-
-        console.log('control', control);
 
         const childNode =
           typeof children === 'function'

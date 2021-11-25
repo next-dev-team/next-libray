@@ -1,11 +1,13 @@
-import { RcField, RcForm, useForm } from '../';
+//@ts-ignore
+import { RcField, RcForm, useForm } from 'components-next';
 import { DemoLayout } from '../../utils/layout';
 
 export default () => {
   const [form] = useForm();
+
   const data = [
     {
-      title: 'Input validation',
+      title: 'TextArea with Form',
       component: (
         <RcForm
           className="w-full"
@@ -14,7 +16,12 @@ export default () => {
             alert(JSON.stringify(values));
           }}
         >
-          <RcField label="Username" name="username" rules={[{ required: true }]} />
+          <RcField
+            label="Username"
+            various="textArea"
+            name="username"
+            rules={[{ required: true }]}
+          />
         </RcForm>
       ),
     },
