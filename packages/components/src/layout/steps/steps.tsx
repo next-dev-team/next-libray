@@ -6,14 +6,14 @@ const { Step } = RcSteps;
 
 type IStepsData = { title: string; content: ReactNode };
 
-export type IInput = {
+export type IStep = {
   onSubmitForm?: (value: any) => Promise<any>;
   confirmContent: IStepsData;
   stepsData: IStepsData[];
   resetAfterSubmit?: boolean;
 };
 
-const Steps = (props: IInput) => {
+const Steps = (props: IStep) => {
   const { onSubmitForm, confirmContent, resetAfterSubmit, stepsData = [] } = props;
 
   const [current, setCurrent] = useState(0);

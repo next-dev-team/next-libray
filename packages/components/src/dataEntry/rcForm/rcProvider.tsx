@@ -12,7 +12,7 @@ export type IRcFormProvider = FormProps & {
 };
 
 const defaultMessages: ValidateMessages = {
-  required: '${name} is required!',
+  required: `Required`,
 };
 
 const RcProvider = (props: IRcFormProvider) => {
