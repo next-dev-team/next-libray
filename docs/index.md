@@ -48,7 +48,7 @@ import { Button } from 'components-next';
 
 const ButtonDemo = () => {
   return (
-    <Button data-action="add" onClick={() => setCount(count + 1)}>
+    <Button>
       Add
     </Button>
   );
