@@ -3,7 +3,6 @@ import path from 'path';
 const isProd = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
-  links: [{ rel: 'manifest', href: '/asset-manifest.json' }],
   resolve: {
     includes: ['docs', 'packages/components/src'],
   },

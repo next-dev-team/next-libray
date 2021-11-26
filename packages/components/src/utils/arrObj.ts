@@ -10,6 +10,9 @@ import { _isEmpty, _pickBy } from './lodash';
 export const clx = (...rest: any) => {
   return overrideTailwindClasses(clsx(rest));
 };
+export const clxx = (...rest: any) => {
+  return overrideTailwindClasses(clsx(rest));
+};
 export const clx1 = clx;
 export const clx2 = clx;
 export const clx3 = clx;

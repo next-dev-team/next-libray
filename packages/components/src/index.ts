@@ -6,7 +6,7 @@
  */
 
 /**
- * --- convert to jsx: ----- https://transform.tools/html-to-jsx
+ * --- convert to jsx: ----- https://magic.reactjs.net/htmltojsx.htm
  */
 
 export * from './card';

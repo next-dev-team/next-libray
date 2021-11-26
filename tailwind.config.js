@@ -18,6 +18,9 @@ module.exports = {
       minHeight: {
         '200px': pxToRem(200),
       },
+      minWidth: {
+        50: pxToRem(50),
+      },
     },
   },
   purge: [
