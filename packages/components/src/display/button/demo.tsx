@@ -19,7 +19,8 @@ const ButtonDemo = () => {
       title: 'Button Outline',
       component: (
         <Space>
-          <Button title="Outline Primary" variant="outline" />
+          <Button title="light" variant="outline" color="light" />
+          <Button title="Primary" variant="outline" />
           <Button title="dark" variant="outline" color="dark" />
         </Space>
       ),

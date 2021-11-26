@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes } from 'react';
 import { cl, cls, clx, tw, tw1 } from '../..';
 
 type IVariant = 'outline' | 'ghost' | 'disabled' | 'primary';
-type IType = 'primary' | 'warning' | 'success' | 'error' | 'dark';
+type IType = 'primary' | 'warning' | 'success' | 'error' | 'dark' | 'light';
 
 export type IButton = {
   /**
@@ -31,17 +31,19 @@ const Button = (props: IButton) => {
   const renderVariant = useCreation(() => {
     //------- primaryColor ----------
     const primaryColor = tw({
-      primary: 'bg-blue-700 hover:bg-blue-800  focus:ring-blue-300',
+      primary: 'bg-blue-500 hover:bg-blue-600  focus:ring-blue-200',
       dark: 'bg-gray-800 hover:bg-gray-900 focus:ring-gray-300',
-      success: 'bg-green-700 hover:bg-green-800 focus:ring-green-300',
+      success: 'bg-green-500 hover:bg-green-600 focus:ring-green-200',
     } as Record<IButton['color'], string>);
 
     //------- outlineColor ----------
     const outlineBase = cls(
       primaryColor[color],
-      'text-blue-700 hover:text-white border border-blue-700 bg-transparent',
+      'text-blue-500 hover:text-white border border-blue-500 bg-transparent',
     );
     const outlineColor = tw1({
+      light:
+        'text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300',
       primary: outlineBase,
       dark: cl(outlineBase, 'border-gray-900 hover:bg-gray-900 text-gray-900'),
     } as Record<IButton['color'], string>);

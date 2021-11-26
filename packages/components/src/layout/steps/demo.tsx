@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { RcField } from 'components-next';
 import { Steps } from '../';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';

@@ -3,7 +3,7 @@ title: Components Next - Collections of components and useful helper
 order: 10
 hero:
   title: Components Next
-  desc: 📖 A doc tool can assist you to develop libraries & write docs.
+  desc: 📖 All in one React Ecosystem Product Ready - (UI - Utils - Docs - Best Practice)
   actions:
     - text: Getting Started
       link: /components/card/blog
@@ -17,36 +17,91 @@ features:
   - icon: https://gw.alipayobjects.com/zos/bmw-prod/b8570f4d-c1b1-45eb-a1da-abff53159967/kj9t990h_w144_h144.png
     title: Theme system
     desc: Progressive custom theme capabilities, ranging from expanding your own Markdown tags to customizing complete theme packages, are up to you
-  - icon: https://gw.alipayobjects.com/zos/bmw-prod/b3e102cd-5dad-4046-a02a-be33241d1cc7/kj9t8oji_w144_h144.png
-    title: API automatically generated
-    desc: Component API can be automatically generated based on TypeScript type definitions, and components will always be『the same in appearance』
-  - icon: https://gw.alipayobjects.com/zos/bmw-prod/3863e74a-7870-4874-b1e1-00a8cdf47684/kj9t7ww3_w144_h144.png
-    title: Mobile component library development
-    desc: Install the theme package to quickly enable mobile component R&D capabilities, built-in mobile HD rendering solution
-  - icon: https://gw.alipayobjects.com/zos/bmw-prod/f093e060-726e-471c-a53e-e988ed3f560c/kj9t9sk7_w144_h144.png
-    title: Asset dataization capabilities
-    desc: One-line command digitizes component assets, and standardized asset data can be connected with downstream productivity tools
+
 footer: Open-source MIT Licensed | Copyright © 2021-present<br />Powered by Next Dev
 ---
 
-## Getting Started
-
-Create first doc in manual way
+## 📦 Install
 
 ```bash
-// Create dir for libraries
-$ mkdir library && cd library
-
-// Install dumi
-$ npm i dumi
-
-// Create docs
-$ mkdir docs && echo '# Hello dumi!' > docs/index.md
-
-// Preview docs
-$ npx dumi dev
+yarn add components-next  or npm install components-next
 ```
 
-## Feedback
+## 🔨 Usage
 
-Please visit [GitHub](https://github.com/umijs/dumi) or join the discuss group
+import whole style: `root app: App.tsx or index.tsx`
+
+```bash
+import 'components-next/es/assets/styles.css';
+```
+
+import style on demand : in case we need only
+
+```bash
+import 'components-next/es/button/button.css';
+```
+
+## Demo
+
+```bash
+import { Button } from 'components-next';
+
+const ButtonDemo = () => {
+  return (
+    <Button data-action="add" onClick={() => setCount(count + 1)}>
+      Add
+    </Button>
+  );
+};
+```
+
+```tsx
+/**
+ * motions:
+ *  - click:[data-action="add"]
+ *  - timeout:500
+ *  - click:[data-action="minus"]
+ *  - timeout:500
+ */
+import React, { useState } from 'react';
+import { Button } from 'components-next';
+
+export default () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div className="flex gap-4 items-center">
+      <Button data-action="minus" onClick={() => setCount(count - 1)}>
+        Minus
+      </Button>
+      <h4 className="mb-0">{count}</h4>
+      <Button data-action="add" onClick={() => setCount(count + 1)} color="success">
+        Add
+      </Button>
+    </div>
+  );
+};
+```
+
+## ⌨️ Development
+
+Use Gitpod, a free online dev environment for GitHub.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ant-design/ant-design)
+
+Or clone locally:
+
+```bash
+$ git clone git@github.com:ant-design/ant-design.git
+$ cd ant-design
+$ npm install
+$ npm start
+```
+
+Open your browser and visit http://127.0.0.1:8001 , see more at [Development](https://github.com/ant-design/ant-design/wiki/Development).
+
+## 🤝 Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
+Read our [contributing guide](https://ant.design/docs/react/contributing) and let's build a better components-next together.
+
+We welcome all contributions. Please read our [CONTRIBUTING.md](https://github.com/ant-design/ant-design/blob/master/.github/CONTRIBUTING.md) first. You can submit any ideas as [pull requests](https://github.com/ant-design/ant-design/pulls) or as [GitHub issues](https://github.com/ant-design/ant-design/issues). If you'd like to improve code, check out the [Development Instructions](https://github.com/ant-design/ant-design/wiki/Development) and have a good time! :)
