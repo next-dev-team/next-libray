@@ -61,7 +61,8 @@ export default defineConfig({
   title: 'Components Next',
   mode: 'site',
   exportStatic: {},
-  dynamicImport: {},
+  dynamicImport: {
+  },
   // For replacement__VERSION__ pkg.version
   extraBabelPlugins: [
     'version',
@@ -119,4 +120,5 @@ export default defineConfig({
   // },
 
   esbuild: {},
+
 });

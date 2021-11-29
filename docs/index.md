@@ -63,7 +63,7 @@ const ButtonDemo = () => {
  *  - click:[data-action="minus"]
  *  - timeout:500
  */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from 'components-next';
 
 export default () => {

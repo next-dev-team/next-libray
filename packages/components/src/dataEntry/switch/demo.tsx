@@ -1,4 +1,4 @@
-//@ts-ignore
+//@ts-nocheck
 import { Space } from 'antd';
 import { RcField, RcForm, Switch, useForm } from 'components-next';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';

@@ -1,5 +1,6 @@
 import { Space } from 'antd';
-import { Button } from '..';
+//@ts-ignore
+import { Button } from 'components-next';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
 const ButtonDemo = () => {

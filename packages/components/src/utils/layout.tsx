@@ -5,13 +5,12 @@ import { Button, Card, Col, Empty, Input, message, Modal, Row, Space } from 'ant
 import type { RowProps } from 'antd/lib/grid/row';
 import Text from 'antd/lib/typography/Text';
 import Title from 'antd/lib/typography/Title';
-import type { ReactNode } from 'react';
-import React, { useState } from 'react';
+//@ts-ignore
+import { RcProvider, _isEmpty, _lowerCase } from 'components-next';
+import { Fragment, ReactNode, useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import '../assets/styles.css';
-import { RcProvider } from '../dataEntry/rcForm';
-import { _isEmpty, _lowerCase } from './lodash';
 
 export type IDemoLayout = {
   data: {
@@ -87,7 +86,7 @@ export const DemoLayout = (props: IDemoLayout) => {
           );
 
           return (
-            <React.Fragment key={k}>
+            <Fragment key={k}>
               <Modal
                 destroyOnClose
                 onCancel={() => setTitle('')}
@@ -166,7 +165,7 @@ export const DemoLayout = (props: IDemoLayout) => {
                   {i?.component}
                 </Card>
               </Col>
-            </React.Fragment>
+            </Fragment>
           );
         })}
       </Row>

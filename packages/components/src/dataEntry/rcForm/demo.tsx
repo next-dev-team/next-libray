@@ -1,6 +1,5 @@
 //@ts-ignore
-import { Button, RcForm, useForm } from 'components-next';
-import { RcField } from '../';
+import { Button, RcField, RcForm, useForm } from 'components-next';
 import { DemoLayout } from '../../utils/layout';
 
 export default () => {
