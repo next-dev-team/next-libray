@@ -1,15 +1,16 @@
+//@ts-nocheck
 import {
   BlogCard1,
+  BlogCard10,
   BlogCard2,
   BlogCard3,
   BlogCard4,
   BlogCard5,
   BlogCard6,
   BlogCard7,
-  BlogCard10,
   BlogCard8,
   BlogCard9,
-} from '../';
+} from 'components-next';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
 export default () => {

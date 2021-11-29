@@ -3,10 +3,9 @@ import path from 'path';
 const isProd = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
-  resolve: {
-    includes: ['docs', 'packages/components/src'],
-  },
-
+  // resolve: {
+  //   includes: ['docs', ],
+  // },
   metas: [
     {
       property: 'og:site_name',
