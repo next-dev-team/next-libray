@@ -8,6 +8,8 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "strict": false,
+    "importHelpers": true,
+    "noEmitOnError": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "suppressImplicitAnyIndexErrors": true,
@@ -31,5 +33,8 @@
     "jest.config.js",
     "**/fixtures",
     "./tests/no-duplicated.ts"
+  ],
+  "exclude": [
+    "./packages/components/src/**/.demo.tsx"
   ]
 }

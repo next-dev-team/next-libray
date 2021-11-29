@@ -1,11 +1,12 @@
 import { isArray } from 'lodash';
 import { Field } from 'rc-field-form';
 import { FieldProps } from 'rc-field-form/lib/Field';
-import React, { HTMLInputTypeAttribute, ReactNode } from 'react';
-import { IInput, Input, Switch } from '..';
+import { cloneElement, HTMLInputTypeAttribute, ReactElement, ReactNode } from 'react';
+import { IInput, Input } from '..';
 import { clx, TextArea } from '../..';
 import { Select1 } from '../select';
 import { ISelect } from '../select/select1';
+import { Switch } from '../switch';
 import { SwitchProps } from '../switch/switch';
 import { ITextArea } from '../textArea/textArea';
 
@@ -92,7 +93,7 @@ const RcField = (props: IField) => {
         const childNode =
           typeof children === 'function'
             ? children(control, meta, form)
-            : React.cloneElement(children || (renderVarious() as React.ReactElement), {
+            : cloneElement(children || (renderVarious() as ReactElement), {
                 ...control,
               });
 
