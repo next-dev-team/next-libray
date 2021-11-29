@@ -1,16 +1,17 @@
-//@ts-ignore
+//@ts-nocheck
 import { Button, RcForm, useForm } from 'components-next';
 import { RcField } from '../';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
+import { FormListDemo } from './demos/formList';
 
 export default () => {
   const [form] = useForm();
   const [form1] = useForm();
-  const [formDynamic] = useForm();
 
   const data: IDemoLayout['data'] = [
     {
       title: 'RcForm custom submit btn',
+      span: '12',
       component: (
         <RcForm
           form={form}
@@ -38,6 +39,7 @@ export default () => {
       ),
     },
     {
+      span: '12',
       title: 'Form With default submit',
       component: (
         <RcForm
@@ -56,63 +58,7 @@ export default () => {
         </RcForm>
       ),
     },
-    {
-      title: 'Form With Dynamic Field',
-      span: '24',
-      component: (
-        <RcForm
-          form={formDynamic}
-          onFinish={(values) => {
-            alert(JSON.stringify(values));
-          }}
-        >
-          <RcForm.List name="users" initialValue={[{}]}>
-            {(fields, { add, remove }) => {
-              console.log('Demo Fields:', fields);
-              return (
-                <div>
-                  {fields.map((field, index) => (
-                    <div className="relative">
-                      <div className="grid  md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-2">
-                        <RcField
-                          {...field}
-                          {...{
-                            label: 'Package Type',
-                            rules: [{ required: true }],
-                          }}
-                        />
-
-                        <div className="absolute right-0 top-0">
-                          {index > 0 && (
-                            <Button
-                              variant="outline"
-                              className="px-2 py-px bg-red-400 text-white"
-                              onClick={() => {
-                                remove(index);
-                              }}
-                              title="X"
-                            />
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-
-                  <Button
-                    onClick={() => {
-                      add();
-                    }}
-                    className="w-full"
-                  >
-                    New Field
-                  </Button>
-                </div>
-              );
-            }}
-          </RcForm.List>
-        </RcForm>
-      ),
-    },
+    FormListDemo(),
   ];
 
   return <DemoLayout data={data} />;

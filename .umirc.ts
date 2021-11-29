@@ -3,9 +3,14 @@ import path from 'path';
 const isProd = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
-  // resolve: {
-  //   includes: ['docs', ],
-  // },
+  styles: ['./global.css'],
+  navs: {
+    'en-US': [
+      null,
+      { title: 'GitHub', path: 'https://github.com/next-dev-team/next-libray' },
+      { title: 'Npm', path: 'https://www.npmjs.com/package/components-next' },
+    ],
+  },
   metas: [
     {
       property: 'og:site_name',
@@ -60,8 +65,7 @@ export default defineConfig({
   title: 'Components Next',
   mode: 'site',
   exportStatic: {},
-  dynamicImport: {
-  },
+  dynamicImport: {},
   // For replacement__VERSION__ pkg.version
   extraBabelPlugins: [
     'version',
@@ -119,5 +123,4 @@ export default defineConfig({
   // },
 
   esbuild: {},
-
 });

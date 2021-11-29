@@ -35,7 +35,7 @@ import whole style: `root app: App.tsx or index.tsx`
 import 'components-next/es/assets/styles.css';
 ```
 
-import style on demand : in case we need only
+import style on demand : in case we need only some components
 
 ```bash
 import 'components-next/es/button/button.css';
@@ -51,34 +51,6 @@ const ButtonDemo = () => {
     <Button>
       Add
     </Button>
-  );
-};
-```
-
-```tsx
-/**
- * motions:
- *  - click:[data-action="add"]
- *  - timeout:500
- *  - click:[data-action="minus"]
- *  - timeout:500
- */
-import { useState } from 'react';
-import { Button } from 'components-next';
-
-export default () => {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="flex gap-4 items-center">
-      <Button data-action="minus" onClick={() => setCount(count - 1)}>
-        Minus
-      </Button>
-      <h4 className="mb-0">{count}</h4>
-      <Button data-action="add" onClick={() => setCount(count + 1)} color="success">
-        Add
-      </Button>
-    </div>
   );
 };
 ```

@@ -54,12 +54,15 @@ const RcField = (props: IField) => {
     ...rest
   } = props;
 
+  /**
+   * isListField will remove init
+   */
+  const initField = {
+    initialValue: isArray(name) ? '' : various === 'select' ? undefined : '',
+  };
+
   return (
-    <Field
-      name={inputProps?.name || name}
-      initialValue={isArray(name) ? {} : various === 'select' ? undefined : ''}
-      {...rest}
-    >
+    <Field name={inputProps?.name || name} {...initField} {...rest}>
       {(control, meta, form) => {
         // console.log('control', control, meta);
         const isErr = meta?.errors.length > 0;
@@ -73,7 +76,7 @@ const RcField = (props: IField) => {
          */
         const renderVarious = () => {
           const placements: Partial<Record<IField['various'], ReactNode>> = {
-            input: <Input {...{ name, theme: renderTheme, ...inputProps }} />,
+            input: <Input {...{ theme: renderTheme, ...inputProps }} />,
             select: (
               <Select1
                 {...{
