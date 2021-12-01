@@ -1,4 +1,4 @@
-// @ts-nocheck1
+// @ts-nocheck
 
 import { CodeOutlined, CopyOutlined, EyeOutlined, FullscreenOutlined } from '@ant-design/icons';
 import { useDebounceFn } from 'ahooks';

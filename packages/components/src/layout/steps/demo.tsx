@@ -17,7 +17,7 @@ const LayoutDemo = () => {
             options={[{ value: 'MALE' }, { value: 'FEMALE' }]}
           />
           <RcField label="Address" name="address" />
-          <RcField label="Email" name="email" rules={[{ required: true }, { type: 'email' }]} />
+          <RcField label="Email" name="email" various="switch" initialValue={false} />
         </div>
       ),
     },
@@ -47,7 +47,7 @@ const LayoutDemo = () => {
           {...{
             confirmContent,
             stepsData,
-            resetAfterSubmit: true,
+            resetAfterSubmit: false,
             onSubmitForm: async (v) => {
               console.log('v', v);
             },

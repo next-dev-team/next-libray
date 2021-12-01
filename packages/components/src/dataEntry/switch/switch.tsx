@@ -27,7 +27,7 @@ export interface SwitchProps
   title?: string;
 }
 
-const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
+const Switch = React.forwardRef<HTMLButtonElement, SwitchProps & { value?: boolean }>(
   (
     {
       className,
@@ -44,7 +44,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
     },
     ref,
   ) => {
-    const [innerChecked, setInnerChecked] = useMergedState<boolean>(false, {
+    const [innerChecked, setInnerChecked] = useMergedState<boolean>(rest.value, {
       value: checked,
       defaultValue: defaultChecked,
     });
@@ -76,6 +76,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
     function onInternalClick(e: React.MouseEvent<HTMLButtonElement>) {
       const ret = triggerChange(!innerChecked, e);
       // [Legacy] trigger onClick with value
+
       onClick?.(ret, e);
     }
 
@@ -95,16 +96,20 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
         className="w-16"
       >
         {loadingIcon}
-        <div
+        <span
           className={clx(
-            'border rounded-full border-grey flex items-center cursor-pointer w-16 justify-start',
-            innerChecked && 'bg-green-400 justify-end text-white',
+            'border rounded-full border-grey flex items-center cursor-pointer w-16 justify-start py-[4px]',
+            innerChecked && 'bg-green-400 justify-end text-white ',
           )}
         >
-          {innerChecked && <span className="px-1 uppercase">{checkedChildren}</span>}
-          <span className={'rounded-full border w-6 h-6 border-grey shadow-inner bg-white'} />
-          {!innerChecked && <span className="px-1 uppercase">{unCheckedChildren}</span>}
-        </div>
+          {innerChecked && <span className="px-1 uppercase select-none">{checkedChildren}</span>}
+          <span
+            className={
+              'rounded-full border-2 border-white w-6 h-6 border-grey shadow-inner bg-gray-300'
+            }
+          />
+          {!innerChecked && <span className="px-1 uppercase select-none">{unCheckedChildren}</span>}
+        </span>
       </span>
     );
   },
