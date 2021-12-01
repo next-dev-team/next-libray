@@ -1,6 +1,6 @@
 const EcommerceCard3 = () => {
   return (
-    <div className="bg-white rounded w-1/4 shadow hover:shadow-md duration-4 w-full">
+    <div className="bg-white rounded shadow hover:shadow-md duration-4 w-full">
       <div className="flex flex-row justify-between uppercase font-bold text-blue-dark border-b p-6">
         <p>My awesome item name</p>
         <div className="cursor-pointer text-grey-dark hover:text-blue duration-4">

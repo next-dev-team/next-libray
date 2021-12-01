@@ -2,8 +2,8 @@
     "private": true,
     "scripts": {
         "bootstrap": "lerna bootstrap",
-        "dev": "yarn start && dumi dev",
-        "dev-tw": "TAILWIND_MODE=watch postcss -i tailwind.css -o build.css --watch",
+        "dev": "dumi dev",
+        "dev-tw": "TAILWIND_MODE=watch",
         "start": "dumi dev",
         "serve": "serve -s dist",
         "build": "dumi build",
@@ -55,8 +55,7 @@
         "umi-plugin-tailwindcss": "^3.2.1",
         "umi-test": "^1.9.6",
         "umi-tools": "^0.4.0",
-        "umi-types": "^0.5.14",
-        "webpack": "^5.64.4"
+        "umi-types": "^0.5.14"
     },
     "browserslist": [
         "last 2 versions",
