@@ -21,6 +21,7 @@
         "yalc-pub": "yarn build-lib && yarn ycom"
     },
     "devDependencies": {
+        "rc-texty": "^0.2.0",
         "@ant-design/icons": "^4.7.0",
         "@tailwindcss/postcss7-compat": "^2.2.17",
         "@types/jest": "^24.0.13",

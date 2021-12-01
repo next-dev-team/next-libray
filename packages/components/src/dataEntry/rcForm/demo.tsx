@@ -1,14 +1,17 @@
-//@ts-ignore
-import { Button, RcField, RcForm, useForm } from 'components-next';
-import { DemoLayout } from '../../utils/layout';
+//@ts-nocheck
+import { Button, RcForm, useForm } from 'components-next';
+import { RcField } from '../';
+import { DemoLayout, IDemoLayout } from '../../utils/layout';
+import { FormListDemo } from './demos/formList';
 
 export default () => {
   const [form] = useForm();
   const [form1] = useForm();
 
-  const data = [
+  const data: IDemoLayout['data'] = [
     {
       title: 'RcForm custom submit btn',
+      span: '12',
       component: (
         <RcForm
           form={form}
@@ -36,6 +39,7 @@ export default () => {
       ),
     },
     {
+      span: '12',
       title: 'Form With default submit',
       component: (
         <RcForm
@@ -54,6 +58,7 @@ export default () => {
         </RcForm>
       ),
     },
+    FormListDemo(),
   ];
 
   return <DemoLayout data={data} />;

@@ -13,6 +13,8 @@ export const clx = (...rest: any) => {
 export const clxx = (...rest: any) => {
   return overrideTailwindClasses(clsx(rest));
 };
+
+//  the class tw suggestion only one time per file so I need to create it n time
 export const clx1 = clx;
 export const clx2 = clx;
 export const clx3 = clx;

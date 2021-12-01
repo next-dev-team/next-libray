@@ -1,12 +1,10 @@
 ---
-title: blog
-order: 1
+title: Text Animate
 group:
-  title: Cards
+  title: Display
 nav:
   title: Components
   path: /components
-  order: 1
 ---
 
 <code src="./demo.tsx"></code>

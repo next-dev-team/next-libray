@@ -1,26 +1,3 @@
-// import { clx } from 'components-next';
-
-// type ITheme = 'warning' | 'success' | 'error' | 'default';
-
-// export type ISelect = { theme?: ITheme };
-
-// const Select1 = (props: ISelect) => {
-//   const { className, theme = 'default', ...rest } = props;
-
-//   return (
-//     <span
-//       className={clx(
-//         'border rounded-full border-grey flex items-center cursor-pointer w-12 justify-start',
-//         'bg-green-400 justify-end',
-//       )}
-//     >
-//       <span className={'rounded-full border w-6 h-6 border-grey shadow-inner bg-white'} />
-//     </span>
-//   );
-// };
-
-// export default Select1;
-
 import useMergedState from 'rc-util/lib/hooks/useMergedState';
 import KeyCode from 'rc-util/lib/KeyCode';
 import * as React from 'react';
@@ -32,7 +9,7 @@ export type SwitchChangeEventHandler = (
 ) => void;
 export type SwitchClickEventHandler = SwitchChangeEventHandler;
 
-interface SwitchProps
+export interface SwitchProps
   extends Omit<React.HTMLAttributes<HTMLButtonElement>, 'onChange' | 'onClick'> {
   className?: string;
   prefixCls?: string;

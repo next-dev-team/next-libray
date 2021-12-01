@@ -1,12 +1,10 @@
 ---
-title: blog
-order: 1
+title: Checkbox
 group:
-  title: Cards
+  title: Data Entry
 nav:
   title: Components
   path: /components
-  order: 1
 ---
 
 <code src="./demo.tsx"></code>

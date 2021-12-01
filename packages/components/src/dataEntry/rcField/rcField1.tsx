@@ -6,9 +6,11 @@ import { IInput, Input } from '..';
 import { clx, TextArea } from '../..';
 import { Select1 } from '../select';
 import { ISelect } from '../select/select1';
+import { Switch } from '../switch';
+import { SwitchProps } from '../switch/switch';
 import { ITextArea } from '../textArea/textArea';
 
-type IVarious = 'input' | 'select' | 'textArea';
+type IVarious = 'input' | 'select' | 'textArea' | 'switch';
 
 export type IField = {
   /**
@@ -18,7 +20,7 @@ export type IField = {
   various?: IVarious;
   label?: string;
   themeColor?: IInput['theme'];
-  name: string;
+  name?: any;
   type?: HTMLInputTypeAttribute;
   errText?: string;
   requiredSign?: boolean;
@@ -30,6 +32,7 @@ export type IField = {
    */
   options?: ISelect['options'];
   inputProps?: React.HTMLProps<HTMLInputElement>;
+  switchProps?: SwitchProps;
 } & FieldProps;
 
 const RcField = (props: IField) => {
@@ -47,17 +50,19 @@ const RcField = (props: IField) => {
     options,
     placeholder,
     themeColor = 'default',
+    switchProps,
     ...rest
   } = props;
 
-  // const checkType = various === 'input' ? 'Please Enter' : 'Please Select';
+  /**
+   * isListField will remove init
+   */
+  const initField = {
+    initialValue: isArray(name) ? '' : various === 'select' ? undefined : '',
+  };
 
   return (
-    <Field
-      name={name}
-      initialValue={isArray(name) ? {} : various === 'select' ? undefined : ''}
-      {...rest}
-    >
+    <Field name={inputProps?.name || name} {...initField} {...rest}>
       {(control, meta, form) => {
         // console.log('control', control, meta);
         const isErr = meta?.errors.length > 0;
@@ -71,7 +76,7 @@ const RcField = (props: IField) => {
          */
         const renderVarious = () => {
           const placements: Partial<Record<IField['various'], ReactNode>> = {
-            input: <Input {...{ name, theme: renderTheme }} />,
+            input: <Input {...{ theme: renderTheme, ...inputProps }} />,
             select: (
               <Select1
                 {...{
@@ -83,6 +88,7 @@ const RcField = (props: IField) => {
               />
             ),
             textArea: <TextArea {...{ placeholder, name, ...textAreaProps }} />,
+            switch: <Switch {...switchProps} />,
           };
           return placements[various];
         };
@@ -125,4 +131,4 @@ const RcField = (props: IField) => {
   );
 };
 
-export default Object.assign(RcField, {});
+export default RcField;

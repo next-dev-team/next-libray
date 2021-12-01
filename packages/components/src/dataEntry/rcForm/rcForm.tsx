@@ -1,4 +1,4 @@
-import Form, { FormProps } from 'rc-field-form';
+import Form, { FormProps, List, useForm } from 'rc-field-form';
 import { ReactNode } from 'react';
 import { Button, clx } from '../../';
 
@@ -30,4 +30,4 @@ const RcForm = (props: IInput) => {
   );
 };
 
-export default RcForm;
+export default Object.assign(RcForm, { List, useForm });
