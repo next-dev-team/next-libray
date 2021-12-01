@@ -9,6 +9,7 @@ const pxToRem = (px) => {
 module.exports = {
   // jit document: https://tailwindcss.com/docs/just-in-time-mode
   mode: 'jit',
+  darkMode: 'class',
   theme: {
     extend: {
       inset: {
@@ -28,6 +29,5 @@ module.exports = {
     './packages/components/src/**/*.tsx',
     './packages/components/src/**/*.ts',
   ],
-  darkMode: false, // or 'media' or 'class'
   variants: {},
 };

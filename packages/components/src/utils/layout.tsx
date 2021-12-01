@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-nocheck1
 
 import { CodeOutlined, CopyOutlined, EyeOutlined, FullscreenOutlined } from '@ant-design/icons';
 import { useDebounceFn } from 'ahooks';
@@ -7,7 +7,7 @@ import { Button, Card, Col, Empty, Input, message, Modal, Row, Space } from 'ant
 import type { RowProps } from 'antd/lib/grid/row';
 import Text from 'antd/lib/typography/Text';
 import Title from 'antd/lib/typography/Title';
-import { RcProvider, _isEmpty, _lowerCase } from 'components-next';
+import { Button as TwButton, RcProvider, _isEmpty, _lowerCase } from 'components-next';
 import type { ReactNode } from 'react';
 import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -45,8 +45,18 @@ export const DemoLayout = (props: IDemoLayout) => {
     gutter = [20, 20],
   } = props;
   const [title, setTitle] = useState('');
+  const [dark, setDark] = useState<'dark' | 'light'>('light');
   const [view, setView] = useState<'preview' | 'code' | 'fullCode'>('preview');
   const [itemData, setItemData] = useState(data);
+
+  const ToggleDark = () => {
+    setDark(dark === 'dark' ? 'light' : 'dark');
+    if (dark === 'dark') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  };
 
   const { run: onSearch } = useDebounceFn(
     (v: string) => {
@@ -60,12 +70,23 @@ export const DemoLayout = (props: IDemoLayout) => {
     <RcProvider>
       {!children && (
         <>
-          <Input
-            onChange={(v) => onSearch(v.target?.value)}
-            className="max-w-xs mb-6"
-            placeholder="Search..."
-            allowClear
-          />
+          <Space align="baseline">
+            <TwButton
+              variant={dark === 'dark' ? 'outline' : 'primary'}
+              color={dark === 'dark' ? 'light' : 'dark'}
+              className="py-2"
+              onClick={ToggleDark}
+            >
+              {dark ? 'Dark' : 'Light'}
+            </TwButton>
+            <Input
+              onChange={(v) => onSearch(v.target?.value)}
+              className="max-w-xs mb-6"
+              placeholder="Search..."
+              allowClear
+            />
+          </Space>
+
           <Row gutter={gutter} justify={_isEmpty(itemData) ? 'center' : 'start'}>
             {_isEmpty(itemData) && <Empty />}
 
