@@ -9,6 +9,11 @@
  * --- convert to jsx: ----- https://magic.reactjs.net/htmltojsx.htm
  */
 
+/**
+ * ui inspired
+ *  - https://nextui.org/
+ */
+
 export * from './card';
 /**
  * ------- constants --------
@@ -19,3 +24,4 @@ export * from './display';
 export * from './feedback';
 export * from './layout';
 export * from './utils';
+
