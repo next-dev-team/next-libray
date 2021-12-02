@@ -1,7 +1,7 @@
 import { isArray } from 'lodash';
 import { Field } from 'rc-field-form';
 import { FieldProps } from 'rc-field-form/lib/Field';
-import { cloneElement, HTMLInputTypeAttribute, ReactElement, ReactNode } from 'react';
+import { cloneElement, HTMLInputTypeAttribute, memo, ReactElement, ReactNode } from 'react';
 import { IInput, Input } from '..';
 import { clx, TextArea } from '../..';
 import { Select1 } from '../select';
@@ -49,6 +49,7 @@ const RcField = (props: IField) => {
     textAreaProps,
     options,
     placeholder,
+    type,
     themeColor = 'default',
     switchProps,
     ...rest
@@ -56,15 +57,15 @@ const RcField = (props: IField) => {
 
   /**
    * isListField will remove init
+   * for select init undefined to show placeholder
    */
   const initField = {
-    initialValue: isArray(name) ? '' : various === 'select' ? undefined : '',
+    initialValue: various === 'select' ? undefined : isArray(name) && '',
   };
 
   return (
     <Field name={inputProps?.name || name} {...initField} {...rest}>
       {(control, meta, form) => {
-        // console.log('control', control, meta);
         const isErr = meta?.errors.length > 0;
         const isSuccess = !isErr && control?.value;
         //@ts-ignore
@@ -76,7 +77,16 @@ const RcField = (props: IField) => {
          */
         const renderVarious = () => {
           const placements: Partial<Record<IField['various'], ReactNode>> = {
-            input: <Input {...{ theme: renderTheme, ...inputProps }} />,
+            input: (
+              <Input
+                {...{
+                  id: name,
+                  type,
+                  theme: renderTheme,
+                  ...inputProps,
+                }}
+              />
+            ),
             select: (
               <Select1
                 {...{
@@ -87,8 +97,24 @@ const RcField = (props: IField) => {
                 }}
               />
             ),
-            textArea: <TextArea {...{ placeholder, name, ...textAreaProps }} />,
-            switch: <Switch {...switchProps} />,
+            textArea: (
+              <TextArea
+                {...{
+                  id: name,
+                  placeholder,
+                  name,
+                  ...textAreaProps,
+                }}
+              />
+            ),
+            switch: (
+              <Switch
+                {...{
+                  id: name,
+                  ...switchProps,
+                }}
+              />
+            ),
           };
           return placements[various];
         };
@@ -131,4 +157,4 @@ const RcField = (props: IField) => {
   );
 };
 
-export default RcField;
+export default memo(RcField);
