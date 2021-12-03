@@ -9,7 +9,7 @@ const LayoutDemo = () => {
       title: 'First',
       content: (
         <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-          <RcField label="Name" name="name" rules={[{ required: true }]} />
+          <RcField type="number" label="Age" name="age" rules={[{ required: true }]} />
           <RcField
             various="select"
             name="gender"
@@ -45,6 +45,9 @@ const LayoutDemo = () => {
       component: (
         <Steps
           {...{
+            getLoading: async () => {
+              return true;
+            },
             confirmContent,
             stepsData,
             resetAfterSubmit: false,

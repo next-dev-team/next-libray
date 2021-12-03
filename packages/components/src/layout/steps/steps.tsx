@@ -1,6 +1,8 @@
+import { useAsyncEffect, useCreation } from 'ahooks';
+import { FormInstance } from 'rc-field-form';
 import RcSteps from 'rc-steps';
-import { ReactNode, useEffect, useState } from 'react';
-import { Button, clx, RcForm, useForm } from '../..';
+import { ReactNode, useCallback, useEffect, useState } from 'react';
+import { Button, clx, goToTop, isProd, RcForm, useForm } from '../..';
 
 const { Step } = RcSteps;
 
@@ -10,36 +12,63 @@ export type IStep = {
   onSubmitForm?: (value: any) => Promise<any>;
   confirmContent: IStepsData;
   stepsData: IStepsData[];
+  /**
+   * get data load from server
+   * return true to make it work
+   */
+  getLoading?: () => Promise<boolean>;
   resetAfterSubmit?: boolean;
+  onNext?: (v?: any) => void;
+  form?: FormInstance<any>;
 };
 
 const Steps = (props: IStep) => {
-  const { onSubmitForm, confirmContent, resetAfterSubmit, stepsData = [] } = props;
+  const [dfForm] = useForm();
+
+  const {
+    onNext,
+    onSubmitForm,
+    confirmContent,
+    resetAfterSubmit,
+    stepsData = [],
+    form = dfForm,
+    getLoading,
+  } = props;
 
   const [current, setCurrent] = useState(0);
   const [steps, setSteps] = useState(stepsData);
 
-  const [form] = useForm();
-  const finalContent = [...steps, confirmContent];
+  const finalContent = useCreation(() => {
+    return [...steps, confirmContent];
+  }, [steps, confirmContent]);
 
-  const isFinalStep = steps?.find?.(
-    (i) => i?.title.toLowerCase() === finalContent[finalContent.length - 1]?.title.toLowerCase(),
-  );
+  const isFinalStep = useCreation(() => {
+    return steps?.find?.(
+      (i) => i?.title.toLowerCase() === finalContent[finalContent.length - 1]?.title.toLowerCase(),
+    );
+  }, [steps]);
 
-  const submit = () => {
+  const submit = (v: any) => {
+    onNext?.(v);
     form.submit();
+    if (isProd) {
+      goToTop();
+    }
   };
 
-  const onReset = () => {
+  const onReset = useCallback(() => {
     setCurrent(0);
     setSteps(stepsData);
     form.resetFields();
-  };
+  }, [stepsData, form]);
 
-  const previous = () => {
+  const previous = useCallback(() => {
     setCurrent(current - 1);
     setSteps(stepsData);
-  };
+    if (isProd) {
+      goToTop();
+    }
+  }, [stepsData, current]);
 
   useEffect(() => {
     if (current === stepsData.length && !isFinalStep) {
@@ -48,9 +77,15 @@ const Steps = (props: IStep) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current]);
 
+  useAsyncEffect(async () => {
+    if (await getLoading?.()) {
+      setSteps(stepsData);
+    }
+  }, [getLoading]);
+
   return (
     <RcForm
-      hasSubmitBtn={false}
+      // hasSubmitBtn={false}
       form={form}
       onFinish={async (v) => {
         const isPlus = current > steps.length ? 0 : 1;

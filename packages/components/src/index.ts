@@ -22,6 +22,6 @@ export { IMG } from './constants';
 export * from './dataEntry';
 export * from './display';
 export * from './feedback';
+export * from './hooks';
 export * from './layout';
 export * from './utils';
-

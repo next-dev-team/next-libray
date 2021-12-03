@@ -1,4 +1,4 @@
-import { HTMLInputTypeAttribute } from 'react';
+import InputNumber, { InputNumberProps } from 'rc-input-number';
 import { clx, tw } from '../../utils';
 
 type ITheme = 'warning' | 'success' | 'error' | 'default';
@@ -14,8 +14,9 @@ export type IInput = {
   errText?: string;
   requiredSign?: boolean;
   placeholder?: string;
-  type?: HTMLInputTypeAttribute;
-} & React.HTMLProps<HTMLInputElement>;
+  type?: InputNumberProps['type'];
+} & InputNumberProps &
+  React.HTMLProps<HTMLInputElement>;
 
 const Input = (props: IInput) => {
   const {
@@ -37,8 +38,27 @@ const Input = (props: IInput) => {
     return placements?.[theme];
   };
 
+  if (type !== 'number') {
+    return (
+      <input
+        {...{
+          type,
+          id: name,
+          name,
+          placeholder,
+          className: clx(
+            'px-4 py-2 rounded-lg border focus:outline-none focus:ring-2',
+            renderInput(),
+            className,
+          ),
+          ...rest,
+        }}
+      />
+    );
+  }
   return (
-    <input
+    // @ts-ignore
+    <InputNumber
       {...{
         type,
         id: name,

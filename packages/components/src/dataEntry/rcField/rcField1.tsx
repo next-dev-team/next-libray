@@ -1,7 +1,6 @@
-import { isArray } from 'lodash';
 import { Field } from 'rc-field-form';
 import { FieldProps } from 'rc-field-form/lib/Field';
-import { cloneElement, HTMLInputTypeAttribute, memo, ReactElement, ReactNode } from 'react';
+import { cloneElement, HTMLInputTypeAttribute, ReactElement, ReactNode } from 'react';
 import { IInput, Input } from '..';
 import { clx, TextArea } from '../..';
 import { Select1 } from '../select';
@@ -60,16 +59,17 @@ const RcField = (props: IField) => {
    * for select init undefined to show placeholder
    */
   const initField = {
-    initialValue: various === 'select' ? undefined : isArray(name) && '',
+    initialValue: various === 'select' ? undefined : '',
   };
+  const newName = inputProps?.name || name;
 
   return (
-    <Field name={inputProps?.name || name} {...initField} {...rest}>
+    <Field name={newName} {...initField} {...rest}>
       {(control, meta, form) => {
         const isErr = meta?.errors.length > 0;
         const isSuccess = !isErr && control?.value;
         //@ts-ignore
-        const checkRule = props?.rules?.find?.((i) => i.required);
+        const checkRule = props?.rules?.find?.((i) => i?.required);
         const renderTheme = isErr ? 'error' : isSuccess ? 'success' : themeColor;
 
         /**
@@ -157,4 +157,4 @@ const RcField = (props: IField) => {
   );
 };
 
-export default memo(RcField);
+export default RcField;

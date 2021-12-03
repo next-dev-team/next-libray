@@ -1,5 +1,5 @@
 import Form, { FormProps, List, useForm } from 'rc-field-form';
-import { ReactNode } from 'react';
+import React from 'react';
 import { Button, clx } from '../../';
 
 export type IInput = FormProps & {
@@ -7,12 +7,17 @@ export type IInput = FormProps & {
    * container clx
    */
   className?: string;
-  children: ReactNode;
+  /**
+   * ReactNode
+   */
+  children: any;
   hasSubmitBtn?: boolean;
 };
 
 const RcForm = (props: IInput) => {
-  const { className, children, hasSubmitBtn = true, form, ...rest } = props;
+  const [dfForm] = useForm();
+
+  const { className, children, hasSubmitBtn = true, form = dfForm, ...rest } = props;
 
   return (
     <Form className={clx('w-full', className)} form={form} {...rest}>
