@@ -1,4 +1,4 @@
 //  =================== ecommerce ===================
 
-export * from './input1';
-export { default as Input } from './input1';
+export * from './input';
+export { default as Input } from './input';

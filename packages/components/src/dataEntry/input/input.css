@@ -9,52 +9,69 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
 }
-.rc-input-number {
-  display: inline-block;
-  height: 40px;
-  margin: 0;
-  padding: 0;
-  font-size: 12px;
-  line-height: 40px;
-  vertical-align: middle;
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
 
-  transition: all 0.3s;
+.rc-input-number.warning {
+  @apply border-yellow-500 text-yellow-600;
 }
+.rc-input-number-focused.warning {
+  @apply ring-yellow-200;
+}
+.rc-input-number.error {
+  @apply border-red-500 text-red-600;
+}
+.error input::placeholder {
+  @apply text-red-600;
+}
+.rc-input-number-focused.error {
+  @apply ring-red-200;
+}
+
+.rc-input-number.success {
+  @apply border-green-500 text-green-600;
+}
+.rc-input-number-focused.success {
+  @apply ring-green-200;
+}
+.rc-input-number.success input::placeholder {
+  @apply text-green-600;
+}
+
+.rc-input-number {
+  @apply border rounded-lg  h-10 leading-10 m-0 p-0 align-middle;
+}
+
 .rc-input-number-focused {
-  border-color: #1890ff;
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  @apply outline-none ring-2 ring-gray-200;
 }
-.rc-input-number-out-of-range input {
-  color: red;
-}
-.rc-input-number-handler {
-  display: block;
-  height: 20px;
-  overflow: hidden;
-  line-height: 20px;
-  text-align: center;
-  touch-action: none;
-}
-.rc-input-number-handler-active {
-  background: #ddd;
-}
+
 .rc-input-number-handler-up-inner,
 .rc-input-number-handler-down-inner {
   color: #666666;
   -webkit-user-select: none;
   user-select: none;
 }
+.rc-input-number-handler-up-inner:hover,
+.rc-input-number-handler-down-inner:hover {
+  @apply text-green-500;
+}
+.rc-input-number-out-of-range input {
+  @apply text-red-500;
+}
+.rc-input-number-handler {
+  @apply block h-5 leading-5 overflow-hidden text-center;
+}
+.rc-input-number-handler-active {
+  background: #ddd;
+}
+
 .rc-input-number:hover {
-  border-color: #1890ff;
 }
 .rc-input-number:hover .rc-input-number-handler-up,
 .rc-input-number:hover .rc-input-number-handler-wrap {
-  border-color: #1890ff;
+  @apply border-gray-300;
 }
 .rc-input-number-disabled:hover {
-  border-color: #d9d9d9;
+  @apply border-gray-300;
 }
 .rc-input-number-disabled:hover .rc-input-number-handler-up,
 .rc-input-number-disabled:hover .rc-input-number-handler-wrap {
@@ -65,30 +82,18 @@ input[type='number'] {
   overflow: hidden;
 }
 .rc-input-number-input {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  color: #666666;
-  line-height: 40px;
-  border: 0;
-
+  @apply px-4 rounded-lg border-0 h-full leading-10 p-0 w-full;
   outline: 0;
-  transition: all 0.3s ease;
   transition: all 0.3s;
-  -moz-appearance: textfield;
-  @apply px-4;
 }
 .rc-input-number-handler-wrap {
-  float: right;
-  width: 20px;
-  height: 100%;
-  border-left: 1px solid #d9d9d9;
-  transition: all 0.3s;
+  @apply border-l border-gray-300 float-right h-full w-5;
 }
 .rc-input-number-handler-up {
   padding-top: 1px;
-  border-bottom: 1px solid #d9d9d9;
   transition: all 0.3s;
+
+  @apply border-b border-gray-300;
 }
 .rc-input-number-handler-up-inner:after {
   content: '+';
@@ -105,18 +110,14 @@ input[type='number'] {
 }
 .rc-input-number-handler-down-disabled:hover,
 .rc-input-number-handler-up-disabled:hover {
-  color: #999;
-  border-color: #d9d9d9;
+  @apply text-gray-400 border-gray-300;
 }
 .rc-input-number-disabled .rc-input-number-input {
-  background-color: #f3f3f3;
-  cursor: not-allowed;
-  opacity: 0.72;
+  @apply cursor-not-allowed opacity-70 bg-white;
 }
 .rc-input-number-disabled .rc-input-number-handler {
   opacity: 0.3;
 }
 .rc-input-number-disabled .rc-input-number-handler:hover {
-  color: #999;
-  border-color: #d9d9d9;
+  @apply bg-gray-400 border-gray-300;
 }

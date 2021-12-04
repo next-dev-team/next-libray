@@ -20,7 +20,7 @@ export type IInput = {
 
 const Input = (props: IInput) => {
   const {
-    theme = 'default',
+    theme = 'warning',
     name,
     className,
     placeholder = 'Please Enter',
@@ -37,28 +37,26 @@ const Input = (props: IInput) => {
     });
     return placements?.[theme];
   };
+  const renderNumberClx = () => {
+    const placements: Partial<Record<IInput['theme'], IInput['theme']>> = {
+      default: 'default',
+      success: 'success',
+      warning: 'warning',
+      error: 'error',
+    };
+    return placements?.[theme];
+  };
 
-  if (type !== 'number') {
+  if (type === 'number') {
     return (
-      <input
-        {...{
-          type,
-          id: name,
-          name,
-          placeholder,
-          className: clx(
-            'px-4 py-2 rounded-lg border focus:outline-none focus:ring-2',
-            renderInput(),
-            className,
-          ),
-          ...rest,
-        }}
+      // @ts-ignore
+      <InputNumber
+        {...{ className: renderNumberClx(), min: 0, type, id: name, name, placeholder, ...rest }}
       />
     );
   }
   return (
-    // @ts-ignore
-    <InputNumber
+    <input
       {...{
         type,
         id: name,

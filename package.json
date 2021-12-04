@@ -64,6 +64,5 @@
         "ie >= 11"
     ],
     "dependencies": {
-        "rc-input-number": "^7.3.4"
     }
 }

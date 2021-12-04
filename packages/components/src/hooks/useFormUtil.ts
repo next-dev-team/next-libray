@@ -1,4 +1,5 @@
 import { useMemoizedFn } from 'ahooks';
+//@ts-ignore
 import { FormInstance } from 'components-next';
 import { isArray } from 'lodash';
 

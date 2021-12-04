@@ -67,7 +67,7 @@ const RcField = (props: IField) => {
     <Field name={newName} {...initField} {...rest}>
       {(control, meta, form) => {
         const isErr = meta?.errors.length > 0;
-        const isSuccess = !isErr && control?.value;
+        const isSuccess = (!isErr && control?.value) || typeof control?.value === 'number';
         //@ts-ignore
         const checkRule = props?.rules?.find?.((i) => i?.required);
         const renderTheme = isErr ? 'error' : isSuccess ? 'success' : themeColor;
@@ -78,6 +78,7 @@ const RcField = (props: IField) => {
         const renderVarious = () => {
           const placements: Partial<Record<IField['various'], ReactNode>> = {
             input: (
+              //@ts-ignore
               <Input
                 {...{
                   id: name,
