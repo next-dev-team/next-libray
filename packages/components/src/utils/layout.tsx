@@ -13,6 +13,7 @@ import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import '../assets/styles.css';
+// import '../tailwind.css';
 
 export type IDemoLayout = {
   data?: {

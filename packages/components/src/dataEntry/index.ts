@@ -5,3 +5,4 @@ export * from './rcForm';
 export * from './select';
 export * from './switch';
 export * from './textArea';
+export * from './upload';
