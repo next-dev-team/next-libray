@@ -3,6 +3,7 @@ import { FormInstance } from 'rc-field-form';
 import RcSteps from 'rc-steps';
 import { ReactNode, useCallback, useEffect, useState } from 'react';
 import { Button, clx, goToTop, isProd, RcForm, useForm } from '../..';
+import { IButton } from '../../display/button/button';
 
 const { Step } = RcSteps;
 
@@ -20,6 +21,7 @@ export type IStep = {
   resetAfterSubmit?: boolean;
   onNext?: (v?: any) => void;
   form?: FormInstance<any>;
+  submitBtnProps?: IButton;
 };
 
 const Steps = (props: IStep) => {
@@ -33,6 +35,7 @@ const Steps = (props: IStep) => {
     stepsData = [],
     form = dfForm,
     getLoading,
+    submitBtnProps,
   } = props;
 
   const [current, setCurrent] = useState(0);
@@ -85,7 +88,7 @@ const Steps = (props: IStep) => {
 
   return (
     <RcForm
-      // hasSubmitBtn={false}
+      hasSubmitBtn={false}
       form={form}
       onFinish={async (v) => {
         const isPlus = current > steps.length ? 0 : 1;
@@ -127,7 +130,7 @@ const Steps = (props: IStep) => {
           <Button onClick={submit}>Next</Button>
         )}
         {isFinalStep && (
-          <Button color="success" onClick={submit}>
+          <Button color="success" onClick={submit} {...submitBtnProps}>
             Submit
           </Button>
         )}

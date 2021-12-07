@@ -32,6 +32,7 @@ export type IField = {
   options?: ISelect['options'];
   inputProps?: React.HTMLProps<HTMLInputElement>;
   switchProps?: SwitchProps;
+  uploadValue?: any;
 } & FieldProps;
 
 const RcField = (props: IField) => {
@@ -51,6 +52,7 @@ const RcField = (props: IField) => {
     type,
     themeColor = 'default',
     switchProps,
+    uploadValue,
     ...rest
   } = props;
 
@@ -71,6 +73,11 @@ const RcField = (props: IField) => {
         //@ts-ignore
         const checkRule = props?.rules?.find?.((i) => i?.required);
         const renderTheme = isErr ? 'error' : isSuccess ? 'success' : themeColor;
+        if (uploadValue) {
+          form.setFieldsValue({
+            [name]: uploadValue,
+          });
+        }
 
         /**
          * renderVarious

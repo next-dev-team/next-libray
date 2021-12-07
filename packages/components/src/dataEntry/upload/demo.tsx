@@ -1,9 +1,11 @@
 //@ts-ignore
 import { DragUpload, RcField, RcForm, useForm } from 'components-next';
+import { useState } from 'react';
 import { DemoLayout, IDemoLayout } from '../../utils/layout';
 
-export default () => {
+const UploadDemo = () => {
   const [form] = useForm();
+  const [upload, setUpload] = useState('');
 
   const data: IDemoLayout['data'] = [
     {
@@ -16,10 +18,10 @@ export default () => {
               console.log('values', values);
             }}
           >
-            <RcField name="test" rules={[{ required: true }]}>
+            <RcField name="test">
               <DragUpload
                 onSuccess={(res, file) => {
-                  form.setFieldsValue({ test: file.name });
+                  setUpload(file.name);
                 }}
               />
             </RcField>
@@ -35,3 +37,5 @@ export default () => {
 
   return <DemoLayout data={data} />;
 };
+
+export default UploadDemo;
