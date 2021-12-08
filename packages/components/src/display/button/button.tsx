@@ -57,7 +57,7 @@ const Button = (props: IButton) => {
     } as Record<IButton['variant'], string>;
 
     return variantType?.[variant];
-  }, []);
+  }, [color]);
 
   return (
     <button

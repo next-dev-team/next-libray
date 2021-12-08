@@ -1,4 +1,4 @@
-import { useAsyncEffect, useCreation } from 'ahooks';
+import { useAsyncEffect, useCreation, useMemoizedFn } from 'ahooks';
 import { FormInstance } from 'rc-field-form';
 import RcSteps from 'rc-steps';
 import { ReactNode, useCallback, useEffect, useState } from 'react';
@@ -49,7 +49,7 @@ const Steps = (props: IStep) => {
     return steps?.find?.(
       (i) => i?.title.toLowerCase() === finalContent[finalContent.length - 1]?.title.toLowerCase(),
     );
-  }, [steps]);
+  }, [steps, finalContent]);
 
   const submit = (v: any) => {
     onNext?.(v);
@@ -59,11 +59,11 @@ const Steps = (props: IStep) => {
     }
   };
 
-  const onReset = useCallback(() => {
+  const onReset = useMemoizedFn(() => {
     setCurrent(0);
     setSteps(stepsData);
     form.resetFields();
-  }, [stepsData, form]);
+  });
 
   const previous = useCallback(() => {
     setCurrent(current - 1);
