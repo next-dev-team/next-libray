@@ -1,4 +1,4 @@
-import { useCreation } from 'ahooks';
+import { omit } from 'lodash';
 import { ButtonHTMLAttributes } from 'react';
 import { cl, cls, clx, tw, tw1 } from '../..';
 
@@ -28,7 +28,7 @@ const Button = (props: IButton) => {
   /**
    * renderBtnClx base on variant
    */
-  const renderVariant = useCreation(() => {
+  const renderVariant = () => {
     //------- primaryColor ----------
     const primaryColor = tw({
       primary: 'bg-blue-500 hover:bg-blue-600  focus:ring-blue-200',
@@ -57,15 +57,15 @@ const Button = (props: IButton) => {
     } as Record<IButton['variant'], string>;
 
     return variantType?.[variant];
-  }, [color]);
+  };
 
   return (
     <button
       type="button"
-      {...rest}
+      {...omit(rest, 'variant', 'color')}
       className={clx(
         'text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 text-center',
-        renderVariant,
+        renderVariant(),
         className,
       )}
     >
@@ -74,4 +74,5 @@ const Button = (props: IButton) => {
   );
 };
 
+Button.displayName = 'Button';
 export default Button;

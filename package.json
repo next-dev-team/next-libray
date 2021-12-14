@@ -3,9 +3,9 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "dev": "dumi dev",
-    "dev-tw": "TAILWIND_MODE=watch",
     "start": "dumi dev",
     "serve": "serve -s dist",
+    "prod": "serve -s dist",
     "build": "dumi build",
     "build-lib": "father-build",
     "changelog": "lerna-changelog",
@@ -40,7 +40,7 @@
     "jsx-to-string": "^1.4.0",
     "lerna": "^4.0.0",
     "lerna-changelog": "^2.2.0",
-    "postcss": "^8.4.4",
+    "postcss": "^8.4.5",
     "postcss-preset-env": "^6.7.0",
     "rc-texty": "^0.2.0",
     "react": "^17.0.2",
@@ -48,12 +48,12 @@
     "react-element-to-jsx-string": "^14.3.4",
     "react-syntax-highlighter": "^15.4.4",
     "tailwind-override": "^0.5.0",
-    "tailwindcss": "^2.2.19",
+    "tailwindcss": "^3.0.2",
     "tailwindcss-pseudo-elements": "^2.0.0",
+    "umi-plugin-tailwindcss": "^3.2.1",
     "umi-test": "^1.9.6",
     "umi-tools": "^0.4.0",
-    "umi-types": "^0.5.14",
-    "umi-plugin-tailwindcss": "^3.2.1"
+    "umi-types": "^0.5.14"
   },
   "browserslist": [
     "last 2 versions",

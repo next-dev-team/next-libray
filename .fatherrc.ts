@@ -4,12 +4,8 @@ export default {
     eslint: true,
     prettier: true,
   },
-  cjs: { type: 'babel', lazy: true },
-  esm: {
-    type: 'babel',
-    importLibToEs: true,
-    minify: true,
-  },
+  cjs: { type: 'babel', minify: true },
+
   // For replacement __VERSION__ pkg.version
   extraBabelPlugins: ['version'],
   // disableTypeCheck: true,

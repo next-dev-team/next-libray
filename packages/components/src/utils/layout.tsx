@@ -10,6 +10,7 @@ import Title from 'antd/lib/typography/Title';
 import { Button as TwButton, RcProvider, _isEmpty, _lowerCase } from 'components-next';
 import type { ReactNode } from 'react';
 import React, { useState } from 'react';
+import reactElementToJSXString from 'react-element-to-jsx-string';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import '../assets/styles.css';
@@ -92,9 +93,7 @@ export const DemoLayout = (props: IDemoLayout) => {
             {_isEmpty(itemData) && <Empty />}
 
             {itemData?.map?.((i, k) => {
-              // console.log("i", reactElementToJSXString(i.component as any, {}));
-
-              const code = 'working on it soon';
+              const code = reactElementToJSXString(i.component);
 
               const copyCode = (
                 <Text

@@ -4,7 +4,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
   styles: ['./global.css'],
-  scripts: ['https://unpkg.com/tailwindcss-jit-cdn'],
+  scripts: ['https://cdn.tailwindcss.com'],
   navs: {
     'en-US': [
       null,
@@ -50,10 +50,6 @@ export default defineConfig({
   alias: {
     'components-next': path.resolve(__dirname, 'packages', 'components', 'src', 'index.ts'),
     'components-layout': 'packages/components/src/utils/layout.tsx',
-  },
-  tailwindcss: {
-    tailwindCssFilePath: '../packages/components/src/tailwind.css',
-    tailwindConfigFilePath: './tailwind.config.js', // Default value tailwindConfigFilePath || join(process.env.APP_ROOT || api.cwd, 'tailwind.config.js'),,
   },
   targets: {
     chrome: 85,
