@@ -1,6 +1,6 @@
 import { omit } from 'lodash';
 import { ButtonHTMLAttributes } from 'react';
-import { cl, cls, clx, tw, tw1 } from '../..';
+import { cl, cls, clx, tw, tw1 } from '../../utils';
 
 type IVariant = 'outline' | 'ghost' | 'disabled' | 'primary';
 type IType = 'primary' | 'warning' | 'success' | 'error' | 'dark' | 'light';

@@ -3,8 +3,12 @@ import path from 'path';
 const isProd = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
-  styles: ['./global.css'],
-  scripts: ['https://cdn.tailwindcss.com'],
+  styles: ['./global.css', `./tailwindProd.css`],
+  scripts: [
+    !isProd
+      ? 'https://cdn.tailwindcss.com'
+      : 'https://raw.githubusercontent.com/next-dev-team/next-libray/master/tailwindProd.css',
+  ],
   navs: {
     'en-US': [
       null,
@@ -90,23 +94,6 @@ export default defineConfig({
       },
       '@ant-design/icons',
     ],
-    // [
-    //   'babel-plugin-import',
-    //   {
-    //     libraryName: 'components-next',
-    //     customName: (name) => {
-    //       const sign = name.lastIndexOf('-');
-    //       const libName = name.substring(0, sign);
-    //       const fullLibName = name.substring(sign + 1, name.length);
-    //       const getLibNum = fullLibName.replace(/\D/g, '');
-    //       const libFolder = fullLibName.substring(0, fullLibName.lastIndexOf(getLibNum));
-    //       const customName = `components-next/lib/${libFolder}/${libName}/${libName + getLibNum}`;
-    //       // console.log('======>customName', customName);
-    //       return customName;
-    //     },
-    //   },
-    //   'components-next',
-    // ],
   ],
   // ssr: isProd && {},
   hash: true,
